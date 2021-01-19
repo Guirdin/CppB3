@@ -18,8 +18,8 @@ auto main()-> int
 	//Syracuse(); // TP 1.4  OK
 	//Integrale(); // TP 1.5 OK
 	//Fibonacci(); // TP 1.6 OK
-	DeveloppementLimites(); // TP 1.7
-	
+	//DeveloppementLimites(); // TP 1.7 Ok
+	Maxfact(); // TP 1.8
 
 	cout << endl;
 	return 0;

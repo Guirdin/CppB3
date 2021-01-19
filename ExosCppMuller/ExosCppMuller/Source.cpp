@@ -9,7 +9,7 @@ auto random(int min, int max) -> int
 }
 
 // JEU421
-    auto jet_de(int de_restant, vector<int>& de_lance) -> void // lance un dés de 6 face et récupère la valeur
+    auto jet_de(vector<int>& de_lance) -> void // lance un dés de 6 face et récupère la valeur
     {
         for (int i{ 0 }; i < 3; i++)
         {
@@ -23,7 +23,7 @@ auto random(int min, int max) -> int
 
         while (choix != 1) // Tant que choix n'est pas égale à 1, répéte le bloc
         {
-            cout << "\n\nTapez (1) pour lancer les des: ";
+            cout << "\n\nPour lancer les des tapez (1): ";
             cin >> choix; // stock la valeur saisie par l'utilisateur dans choix
         }
     }
@@ -63,18 +63,20 @@ auto random(int min, int max) -> int
 
         }
     }
+
 // JEU421
 
 // JeuDesAllumettes
-    auto Tour_De_Jeu(int nb_tour, int Joueur) -> int // Utilisation d'un compteur qui est paire ou impaire afin de changer de joueur;
+    auto Tour_De_Jeu(int nb_tour) -> int // Utilisation d'un compteur qui est paire ou impaire afin de changer de joueur;
     {
+        int joueur;
         if (nb_tour % 2 == 0) {
-            Joueur = 2;
+            joueur = 2;
         }
         else {
-            Joueur = 1;
+            joueur = 1;
         }
-        return Joueur;
+        return joueur;
     }
 
     auto Affiche_Allumettes(int Allumettes) -> void {  // Affichage des allumettes avec une boucle

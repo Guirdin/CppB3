@@ -46,6 +46,10 @@ bower_components
 !.vscode/extensions.json
 .vs
 
+# IDE - Visual studio
+Debug
+x64
+
 # misc
 .sass-cache
 connect.lock

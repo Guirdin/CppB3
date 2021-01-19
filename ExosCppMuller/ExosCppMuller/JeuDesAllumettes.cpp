@@ -14,7 +14,7 @@ void JeuDesAllumettes()
 
     while (Allumettes != 0) { // Permet de relancer le jeu tant qu'il reste plus d'une allumettes
         nb_tour++;
-        Joueur = Tour_De_Jeu(nb_tour,Joueur);
+        Joueur = Tour_De_Jeu(nb_tour);
         cout << "\nJoueur " << Joueur << " a vous de jouer\n";
         Choix = Retirer_Allumettes(Allumettes);
 

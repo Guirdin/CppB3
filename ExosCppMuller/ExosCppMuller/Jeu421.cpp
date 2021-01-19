@@ -14,7 +14,7 @@ void Jeu421()
     {
         jouer();
 
-        jet_de(nb_de, de_lance);
+        jet_de(de_lance);
 
         affiche_des(nb_de, de_lance, nb_coup);
 
