@@ -2,25 +2,18 @@
 
 auto random(int min, int max) -> int 
 {
-    srand(time(NULL)); // Met l'horloge à null et ajout d'un mutiplicateur aléatoire, évitant l'obtention des mêmes résultat
-    int x = (rand() % (max - min) + (min));
-    return  x;// Génère un nombre aléatoire pour notre variable prise en paramètre
+    int x = (min) + (int)(rand() % (max - (min) + 1));
+    srand(time(NULL) + 100 * x); // Met l'horloge à null et ajout d'un mutiplicateur aléatoire, évitant l'obtention des mêmes résultat
+    x = (min)+(int)(rand() % (max - (min)+1));
+    return  x; // Génère un nombre aléatoire pour notre variable prise en paramètre
 }
+
 // JEU421
     auto jet_de(int de_restant, vector<int>& de_lance) -> void // lance un dés de 6 face et récupère la valeur
     {
         for (int i{ 0 }; i < 3; i++)
         {
-            //random(1, 6);
-            int x = rand() % (6 + 1); // Génère un nombre aléatoire
-            srand(time(NULL) + 100 * x); // Met l'horloge à null et ajout d'un mutiplicateur aléatoire, évitant l'obtention des mêmes résultat
-            de_lance[i] = rand() % (6 + 1); // Génère un nombre aléatoire pour notre variable prise en paramètre
-
-            while (de_lance[i] < 1 || de_lance[i] > 6)
-            {
-                srand(time(NULL) + 100 * i); // Met l'horloge à null et ajout d'un mutiplicateur aléatoire, évitant l'obtention des mêmes résultat
-                de_lance[i] = rand() % (6 + 1); // Génère un nombre aléatoire pour notre variable prise en paramètre
-            }
+            de_lance[i] = random(1, 6);
         }
     }
 

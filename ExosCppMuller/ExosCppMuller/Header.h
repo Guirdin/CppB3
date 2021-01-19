@@ -6,6 +6,7 @@
 #include <numeric>
 #include <string>
 #include <functional>
+#define PI 3.14159265358979224
 
 // using namespace std; permet de ne pas spécifier std et est une mauvaise pratique
 using std::cout;

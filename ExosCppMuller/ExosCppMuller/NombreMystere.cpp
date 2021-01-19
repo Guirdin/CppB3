@@ -5,6 +5,7 @@ void NombreMystere()
 	int nbMystere, max, min, coups, nombre;
 
 	cout << "Bienvenue sur le TP 1.1 - Nombre Mystere\n";
+    
 
 	cout << "Veuillez siaisr la valeur de x: ";
 	cin >> max;
