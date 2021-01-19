@@ -8,7 +8,7 @@ void Jeu421()
 
     int nb_de{ 3 }, nb_coup{ 3 }, choix;
 
-    cout << "Bienvenu sur le jeu du 421";
+    cout << "Bienvenue sur le jeu du 421";
 
     while (nb_coup != 0) // Tant que le nombre de coup/essais n'est pas égale à 0, le bloc est relancer
     {
