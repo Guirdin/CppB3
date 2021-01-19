@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{b1c1da01-4b08-48cb-97c7-5ddd85c159ef}</ProjectGuid>
+    <ProjectGuid>{0585a28b-664c-4003-a922-249eb86fd57d}</ProjectGuid>
     <RootNamespace>ExosCppMuller</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -139,18 +139,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\ExoC++Muller\ExoC++Muller\Header.h" />
+    <ClInclude Include="Header.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\ExoC++Muller\ExoC++Muller\DeveloppementsLimites.cpp" />
-    <ClCompile Include="..\..\ExoC++Muller\ExoC++Muller\Fibonacci.cpp" />
-    <ClCompile Include="..\..\ExoC++Muller\ExoC++Muller\Integrale.cpp" />
-    <ClCompile Include="..\..\ExoC++Muller\ExoC++Muller\Jeu421.cpp" />
-    <ClCompile Include="..\..\ExoC++Muller\ExoC++Muller\JeuDesAllumettes.cpp" />
-    <ClCompile Include="..\..\ExoC++Muller\ExoC++Muller\Main.cpp" />
-    <ClCompile Include="..\..\ExoC++Muller\ExoC++Muller\NombreMystere.cpp" />
-    <ClCompile Include="..\..\ExoC++Muller\ExoC++Muller\Source.cpp" />
-    <ClCompile Include="..\..\ExoC++Muller\ExoC++Muller\Syracuse.cpp" />
+    <ClCompile Include="DeveloppementLimites.cpp" />
+    <ClCompile Include="Fibonacci.cpp" />
+    <ClCompile Include="Integrale.cpp" />
+    <ClCompile Include="Jeu421.cpp" />
+    <ClCompile Include="JeuDesAllumettes.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="NombreMystere.cpp" />
+    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Syracuse.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
