@@ -2,6 +2,8 @@
 
 void Integrale()
 {
+	cout << "Bienvenue sur le TP 1.5 - Integrale\n";
+
 	float a, p, resultat;
 	int b;
 

@@ -2,6 +2,8 @@
 
 void JeuDesAllumettes()
 {
+    cout << "Bienvenue sur le TP 1.3 - Jeu des allumettes\n";
+
     // Initialisation variable
     int Allumettes, nb_tour{ 0 }, Joueur{ 0 }, Choix;
 

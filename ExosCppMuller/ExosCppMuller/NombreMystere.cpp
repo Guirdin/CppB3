@@ -2,22 +2,14 @@
 
 void NombreMystere()
 {
-	int nbMystere, max, min, coups, nombre;
-
-	cout << "Bienvenue sur le TP 1.1 - Nombre Mystere\n";
+    cout << "Bienvenue sur le TP 1.1 - Nombre mystere\n";
+    int nbMystere, max, min, coups{ 0 }, nombre;
     
-
 	cout << "Veuillez siaisr la valeur de x: ";
 	cin >> max;
+
 	min = -max;
-	cout << "\n";
-
-	cout << "\n max"<< max;
-	cout << "\n min" << min;
-
 	nbMystere = random(min,max);
-    cout << "\n nombre Mystere = " << nbMystere;
-
 
     do // Boucle qui permet de relancer le jeu tant que le nombre n'est pas trouver
     {
@@ -27,7 +19,7 @@ void NombreMystere()
         if (nombre == nbMystere)
         {
             coups++;
-            cout <<"Vous avez réussis en " << coups << " coups";
+            cout <<"\nFelicitation vous avez reussis en " << coups << " coups";
             break;
         }
 
@@ -44,6 +36,4 @@ void NombreMystere()
         }
 
     } while (true);
-
-	cout << nbMystere;
 }

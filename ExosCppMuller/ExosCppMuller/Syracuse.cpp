@@ -2,8 +2,9 @@
 
 void Syracuse()
 {
-    int value;
-    int iteration = 0;
+    cout << "Bienvenue sur le TP 1.4 - Syracuse\n";
+
+    int value, iteration{ 0 };
 
     cout << "Veuillez saisir un nombre : ";
     cin >> value;
@@ -12,7 +13,6 @@ void Syracuse()
     {
         iteration++;
 
-        // we check if initialNumber is pair.
         if (value % 2 == 0)
         {
             value = value / 2;

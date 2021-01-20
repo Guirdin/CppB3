@@ -2,7 +2,7 @@
 
 void DeveloppementLimites()
 {
-    int choix;
+    int choix{ 0 };
     double X, resultat;
 
     cout << "Bienvenue sur le TP 1.7 - Developpement limites\n";

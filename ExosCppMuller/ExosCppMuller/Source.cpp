@@ -3,7 +3,7 @@
 auto random(int min, int max) -> int 
 {
     int x = (min) + (int)(rand() % (max - (min) + 1));
-    srand(time(NULL) + 100 * x); // Met l'horloge à null et ajout d'un mutiplicateur aléatoire, évitant l'obtention des mêmes résultat
+    srand(time(NULL) + 100 * static_cast<long long>(x)); // Met l'horloge à null et ajout d'un mutiplicateur aléatoire, évitant l'obtention des mêmes résultat
     x = (min)+(int)(rand() % (max - (min)+1));
     return  x; // Génère un nombre aléatoire pour notre variable prise en paramètre
 }
@@ -88,7 +88,7 @@ auto random(int min, int max) -> int
 
     auto Retirer_Allumettes(int Allumettes) -> int // Nombre d'allumette retirable celon des conditions
     {
-        int Choix;
+        int Choix{ 0 };
         if (Allumettes > 2)
         {
             do {
