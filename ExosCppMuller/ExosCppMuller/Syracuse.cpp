@@ -2,11 +2,12 @@
 
 void Syracuse()
 {
-    cout << "Bienvenue sur le TP 1.4 - Syracuse\n";
+    cout << "\nBienvenue sur le TP 1.4 - Syracuse\n";
+    cout << "\nRegles: pour tout entier N > 0, il existe un indice N tel que uN = 1\n";
 
     int value, iteration{ 0 };
 
-    cout << "Veuillez saisir un nombre : ";
+    cout << "Suite de Syracuse pour N = ";
     cin >> value;
     
     while (value != 1)

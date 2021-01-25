@@ -4,7 +4,9 @@ void Fibonacci()
 {
     int f0, f1, iterator;
 
-    cout << "Bienvenue sur le TP 1.6 - Fibonacci\n";
+    cout << "\nBienvenue sur le TP 1.6 - Fibonacci\n";
+    cout << "\nLe nombre de Fibonacci F(n) est defini comme suit :";
+    cout << "\nF(n) = F(n - 1) + F(n - 2)\n";
 
     cout << "\nVeuillez saisir une valeur F(0): ";
     cin >> f0;

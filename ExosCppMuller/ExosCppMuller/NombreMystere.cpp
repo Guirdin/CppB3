@@ -2,10 +2,11 @@
 
 void NombreMystere()
 {
-    cout << "Bienvenue sur le TP 1.1 - Nombre mystere\n";
     int nbMystere, max, min, coups{ 0 }, nombre;
-    
-	cout << "Veuillez siaisr la valeur de x: ";
+    cout << "\nBienvenue sur le TP 1.1 - Nombre mystere\n";
+
+    cout << "\nRegles: Trouver le nombre compris entre -N et N";
+	cout << "\nVeuillez choisir la valeur de N : ";
 	cin >> max;
 
 	min = -max;
@@ -25,15 +26,15 @@ void NombreMystere()
 
         if (nombre < nbMystere)
         {
-            cout <<"\nC'est plus";
             coups++;
+            cout <<"\nC'est plus";
+            
         }
 
         else
-        {
-            cout <<"\nC'est moins";
+        { 
             coups++;
+            cout <<"\nC'est moins";
         }
-
     } while (true);
 }

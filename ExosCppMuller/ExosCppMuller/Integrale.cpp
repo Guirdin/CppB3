@@ -2,18 +2,19 @@
 
 void Integrale()
 {
-	cout << "Bienvenue sur le TP 1.5 - Integrale\n";
+	cout << "\nBienvenue sur le TP 1.5 - Integrale\n";
+	cout << "\nRegles: calcule de l integrale par la methode des rectangles avec x[a, b] et un pas p\n";
 
-	float a, p, resultat;
+	double a, p, resultat;
 	int b;
 
-	cout << "\nVeuillez saisir la valeur a : ";
+	cout << "\nVeuillez saisir la valeur de a : ";
 	cin >> a;
 
-	cout << "\nVeuillez saisir la valeur b : ";
+	cout << "\nVeuillez saisir la valeur de b : ";
 	cin >> b;
 
-	cout << "\nVeuillez saisir la valeur p : ";
+	cout << "\nVeuillez saisir la valeur de p : ";
 	cin >> p;
 
 	p = (b - a) / p;
@@ -28,6 +29,5 @@ void Integrale()
 		a += p;
 	}
 
-	cout << endl;
 	cout << "\nLa somme des elements= " << accumulate(tableauRectangles.begin(), tableauRectangles.end(), 0.0);
 }

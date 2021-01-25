@@ -1,5 +1,34 @@
 #include "Header.h"
 
+map<string, function<void() >> funcs = {
+    { "NombreMystere", NombreMystere },
+    { "Jeu421", Jeu421 },
+    { "JeuDesAllumettes", JeuDesAllumettes },
+    { "Syracuse", Syracuse },
+    { "Integrale", Integrale },
+    { "Fibonacci", Fibonacci },
+    { "DeveloppementLimites", DeveloppementLimites },
+    { "Maxfact", Maxfact },
+};
+
+auto restart(string fonction) -> void {
+    string choix;
+
+    do {
+        funcs[fonction]();
+        cout << "\n\nVoulez vous recommencer [o,O/N,n]: ";
+        cin >> choix;
+    } while (choix != "N" && choix != "n");
+
+    cout << "\nVoulez vous choisir un autre Tp [o,O/N,n]: ";
+    cin >> choix;
+    if (choix == "O" || choix == "o")
+    {
+        cout << endl;
+        main();
+    }
+}
+
 auto random(int min, int max) -> int 
 {
     int x = (min) + (int)(rand() % (max - (min) + 1));
@@ -9,9 +38,9 @@ auto random(int min, int max) -> int
 }
 
 // JEU421
-    auto jet_de(vector<int>& de_lance) -> void // lance un dés de 6 face et récupère la valeur
+    auto jet_de(vector<int>& de_lance, int nb_de) -> void // lance un dés de 6 face et récupère la valeur
     {
-        for (int i{ 0 }; i < 3; i++)
+        for (int i{ 0 }; i < nb_de; i++)
         {
             de_lance[i] = random(1, 6);
         }
@@ -23,7 +52,7 @@ auto random(int min, int max) -> int
 
         while (choix != 1) // Tant que choix n'est pas égale à 1, répéte le bloc
         {
-            cout << "\n\nPour lancer les des tapez (1): ";
+            cout << "\nPour lancer les des tapez (1): ";
             cin >> choix; // stock la valeur saisie par l'utilisateur dans choix
         }
     }
@@ -50,7 +79,7 @@ auto random(int min, int max) -> int
                 de_restant--;
             }
         }
-        cout << "\nVotre Main = [" << main[0] << "," << main[1] << "," << main[2] << "]"; // Affiche la main
+        cout << "\nVotre Main = [" << main[0] << "," << main[1] << "," << main[2] << "]\n"; // Affiche la main
     }
 
     auto affiche_des(int de_restant, vector<int> de_lance, int essai_restant) -> void
@@ -67,7 +96,7 @@ auto random(int min, int max) -> int
 // JEU421
 
 // JeuDesAllumettes
-    auto Tour_De_Jeu(int nb_tour) -> int // Utilisation d'un compteur qui est paire ou impaire afin de changer de joueur;
+    auto TourDeJeu(int nb_tour) -> int // Utilisation d'un compteur qui est paire ou impaire afin de changer de joueur;
     {
         int joueur;
         if (nb_tour % 2 == 0) {
@@ -79,14 +108,14 @@ auto random(int min, int max) -> int
         return joueur;
     }
 
-    auto Affiche_Allumettes(int Allumettes) -> void {  // Affichage des allumettes avec une boucle
+    auto AfficherAllumettes(int Allumettes) -> void {  // Affichage des allumettes avec une boucle
         for (int i = 1; i < Allumettes; i++) {
             cout << " | ";
         }
         cout << " | " << Allumettes;
     }
 
-    auto Retirer_Allumettes(int Allumettes) -> int // Nombre d'allumette retirable celon des conditions
+    auto RetirerAllumettes(int Allumettes) -> int // Nombre d'allumette retirable celon des conditions
     {
         int Choix{ 0 };
         if (Allumettes > 2)

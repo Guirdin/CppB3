@@ -5,7 +5,7 @@ void DeveloppementLimites()
     int choix{ 0 };
     double X, resultat;
 
-    cout << "Bienvenue sur le TP 1.7 - Developpement limites\n";
+    cout << "\nBienvenue sur le TP 1.7 - Developpement limites\n";
 
     cout << "\nPour le Sinus tapez (1)";
     cout << "\nPour le Cosinus tapez (2)";

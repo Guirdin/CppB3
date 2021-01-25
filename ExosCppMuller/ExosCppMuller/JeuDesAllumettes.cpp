@@ -2,45 +2,38 @@
 
 void JeuDesAllumettes()
 {
-    cout << "Bienvenue sur le TP 1.3 - Jeu des allumettes\n";
-
     // Initialisation variable
-    int Allumettes, nb_tour{ 0 }, Joueur{ 0 }, Choix;
+    int allumettes, nb_tour{ 0 }, joueur{ 0 }, choix;
+    cout << "\nBienvenue sur le TP 1.3 - Jeu des allumettes\n";
 
-    do {
-        cout << "Avec combien d'Allumettes souhaitez vous jouer (min 6): ";
-        cin >> Allumettes;
-    } while (Allumettes < 6);
+    cout << "\nRegle : il y a plusieurs allumettes, on en retire 1, 2 ou 3 et celui qui prend la dernière a perdu.\n";
+    cout << "Avec combien d'allumettes souhaitez vous jouer (conseil min 6): ";
+    cin >> allumettes;
     
-    Affiche_Allumettes(Allumettes);
+    AfficherAllumettes(allumettes);
 
-    while (Allumettes != 0) { // Permet de relancer le jeu tant qu'il reste plus d'une allumettes
+    while (allumettes != 0) { // Permet de relancer le jeu tant qu'il reste plus d'une allumettes
         nb_tour++;
-        Joueur = Tour_De_Jeu(nb_tour);
-        cout << "\nJoueur " << Joueur << " a vous de jouer\n";
-        Choix = Retirer_Allumettes(Allumettes);
+        joueur = TourDeJeu(nb_tour);
+        cout << "\n\nJoueur " << joueur << " a vous de jouer";
+        choix = RetirerAllumettes(allumettes);
 
-        switch (Choix) { // Permet de décrémenter le nombre d'allumettes selons le choix utilisateur
+        switch (choix) { // Permet de décrémenter le nombre d'allumettes selons le choix utilisateur
         case 1:
-            Allumettes--;
-            Affiche_Allumettes(Allumettes);
+            allumettes--;
+            AfficherAllumettes(allumettes);
             break;
 
         case 2:
-
-            Allumettes -= 2;
-            Affiche_Allumettes(Allumettes);
-
+            allumettes -= 2;
+            AfficherAllumettes(allumettes);
             break;
 
         case 3:
-
-            Allumettes -= 3;
-            Affiche_Allumettes(Allumettes);
-
+            allumettes -= 3;
+            AfficherAllumettes(allumettes);
             break;
         }
     }
-    nb_tour++;
-    cout << "\nLa partie a durer " << nb_tour << " tours et le joueur " << Joueur << " a perdu !!";
+    cout << "\n\nLa partie a durer " << nb_tour << " tours et le joueur " << joueur << " a perdu !!";
 }
