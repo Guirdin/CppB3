@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Fichiers sources\Partie1">
+      <UniqueIdentifier>{2616bd11-624e-4c5c-aad5-02b7d427027b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Partie2">
+      <UniqueIdentifier>{cc060ac5-4c37-403e-b001-9ca53c502544}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header.h">
@@ -26,29 +32,35 @@
     <ClCompile Include="Main.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="Jeu421.cpp">
-      <Filter>Fichiers sources</Filter>
+    <ClCompile Include="DeveloppementLimites.cpp">
+      <Filter>Fichiers sources\Partie1</Filter>
     </ClCompile>
     <ClCompile Include="Fibonacci.cpp">
-      <Filter>Fichiers sources</Filter>
+      <Filter>Fichiers sources\Partie1</Filter>
     </ClCompile>
     <ClCompile Include="Integrale.cpp">
-      <Filter>Fichiers sources</Filter>
+      <Filter>Fichiers sources\Partie1</Filter>
+    </ClCompile>
+    <ClCompile Include="Jeu421.cpp">
+      <Filter>Fichiers sources\Partie1</Filter>
     </ClCompile>
     <ClCompile Include="JeuDesAllumettes.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Syracuse.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="NombreMystere.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="DeveloppementLimites.cpp">
-      <Filter>Fichiers sources</Filter>
+      <Filter>Fichiers sources\Partie1</Filter>
     </ClCompile>
     <ClCompile Include="Maxfact.cpp">
-      <Filter>Fichiers sources</Filter>
+      <Filter>Fichiers sources\Partie1</Filter>
+    </ClCompile>
+    <ClCompile Include="NombreMystere.cpp">
+      <Filter>Fichiers sources\Partie1</Filter>
+    </ClCompile>
+    <ClCompile Include="Syracuse.cpp">
+      <Filter>Fichiers sources\Partie1</Filter>
+    </ClCompile>
+    <ClCompile Include="ReferencePointeurB.cpp">
+      <Filter>Fichiers sources\Partie2</Filter>
+    </ClCompile>
+    <ClCompile Include="ReferencePointeurC.cpp">
+      <Filter>Fichiers sources\Partie2</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

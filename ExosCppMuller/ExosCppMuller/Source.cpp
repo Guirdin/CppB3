@@ -1,5 +1,7 @@
 #include "Header.h"
 
+const double pi = std::acos(-1);
+
 map<string, function<void() >> funcs = {
     { "NombreMystere", NombreMystere },
     { "Jeu421", Jeu421 },
@@ -9,6 +11,9 @@ map<string, function<void() >> funcs = {
     { "Fibonacci", Fibonacci },
     { "DeveloppementLimites", DeveloppementLimites },
     { "Maxfact", Maxfact },
+    //{ "ReferencePointeurA",  },
+    { "ReferencePointeurB", C_2_6b },
+    { "ReferencePointeurC", C_2_6c },
 };
 
 auto restart(string fonction) -> void {
