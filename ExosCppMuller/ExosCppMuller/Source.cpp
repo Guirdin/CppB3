@@ -11,9 +11,11 @@ map<string, function<void() >> funcs = {
     { "Fibonacci", Fibonacci },
     { "DeveloppementLimites", DeveloppementLimites },
     { "Maxfact", Maxfact },
-    //{ "ReferencePointeurA",  },
+    { "ReferencePointeurA", C_2_6a },
     { "ReferencePointeurB", C_2_6b },
     { "ReferencePointeurC", C_2_6c },
+    //{ "Macro", Macro },
+    //{ "Personne", Personne },
 };
 
 auto restart(string fonction) -> void {
@@ -24,14 +26,8 @@ auto restart(string fonction) -> void {
         cout << "\n\nVoulez vous recommencer [o,O/N,n]: ";
         cin >> choix;
     } while (choix != "N" && choix != "n");
-
-    cout << "\nVoulez vous choisir un autre Tp [o,O/N,n]: ";
-    cin >> choix;
-    if (choix == "O" || choix == "o")
-    {
-        cout << endl;
-        main();
-    }
+    cout << endl;
+    main();
 }
 
 auto random(int min, int max) -> int 

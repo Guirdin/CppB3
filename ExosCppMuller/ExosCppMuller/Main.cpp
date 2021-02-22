@@ -17,9 +17,13 @@ auto main()-> int
 	cout << "\nPour le TP 1.8 - Maxfact tapez (8)\n";
 
 	cout << "\nExercices Partie 2:";
-	//cout << "\nPour le TP 2.1a - Référence/Pointeur tapez (9)\n";
-	cout << "\nPour le TP 2.1b - Reference/Pointeur tapez (10)";
-	cout << "\nPour le TP 2.1c - Reference/Pointeur intelligent tapez (11)\n";
+	cout << "\nPour le TP 2.1a - Reference/Pointeur A tapez (9)";
+	cout << "\nPour le TP 2.1b - Reference/Pointeur B tapez (10)";
+	cout << "\nPour le TP 2.1c - Reference/Pointeur C tapez (11)";
+	cout << "\nPour le TP 2.2 - Macro tapez (12)";
+	cout << "\nPour le TP 2.3 - Personne tapez (13)\n";
+
+	cout << "\nPour Quitter tapez (0)\n";
 
 	cout << "\nVeuillez choisir un TP: ";
 	cin >> choix;
@@ -27,6 +31,8 @@ auto main()-> int
 	switch (choix)
 	{
 		default: main(); break;
+
+		case 0: break; // Quitter
 
 		case 1: restart("NombreMystere"); break; // TP 1.1
 
@@ -44,13 +50,16 @@ auto main()-> int
 
 		case 8: restart("Maxfact"); break; // TP 1.8
 
-		//case 9: restart("ReferencePointeurA"); break; // TP 2.1a
+		case 9: restart("ReferencePointeurA"); break; // TP 2.1a
 
 		case 10: restart("ReferencePointeurB"); break; // TP 2.1b
 
 		case 11: restart("ReferencePointeurC"); break; // TP 2.1c
 
-	}
+		case 12: restart("Macro"); break; // TP 2.1c
 
+		case 13: restart("Personne"); break; // TP 2.1c
+		
+	}
 	return 0;
 }
