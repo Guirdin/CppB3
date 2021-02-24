@@ -65,5 +65,11 @@
     <ClCompile Include="ReferencePointeurA.cpp">
       <Filter>Fichiers sources\Partie2</Filter>
     </ClCompile>
+    <ClCompile Include="Macro.cpp">
+      <Filter>Fichiers sources\Partie2</Filter>
+    </ClCompile>
+    <ClCompile Include="Personne.cpp">
+      <Filter>Fichiers sources\Partie2</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

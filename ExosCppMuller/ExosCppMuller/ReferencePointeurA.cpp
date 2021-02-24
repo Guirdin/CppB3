@@ -6,7 +6,8 @@ using ptrInt = int*;
 
 void constructeur(ptrInt& ptr, int valeur)
 {
-	ptr = &valeur;
+	ptr = new int;
+	*ptr = valeur;
 }
 
 void affiche(const ptrInt& ptr, int valeur) {
@@ -17,18 +18,19 @@ void affiche(const ptrInt& ptr, int valeur) {
 
 void destructeur(ptrInt& ptr) {
 	//test ptr
-	delete [] ptr;
-	ptr = nullptr;
+	delete ptr;
 }
 
 void C_2_6a() {
 	cout << "\nBienvenue sur le TP 2.1a - Reference/Pointeur\n";
 	ptrInt ptr_a = nullptr;
 	unsigned a{10};
+	unsigned t1 = 5;
 
 	cout << "\nVeuillez saisir la valeur : ";
 	cin >> a;
 	constructeur(ptr_a, a);
 	affiche(ptr_a, a);
 	destructeur(ptr_a);
+	affiche(ptr_a, a);
 }
