@@ -16,13 +16,13 @@ Personne* creer()
 }
 
 void initialiser(Personne& pp){
-	Personne pp = { 10,"Paul",Masculin };
+	pp = { 10,"Paul",Masculin };
 }
 
 void afficher(const Personne& pp) {
-	cout << "La Personne à pour numéro [" << pp.numero << "]";
-	cout << "La Personne se nomme [" << pp.nom << "]";
-	cout << "La Personne est de sexe [" << pp.sexe << "]";
+	cout << "\nLa Personne a pour numero [" << pp.numero << "]";
+	cout << "\nLa Personne se nomme [" << pp.nom << "]";
+	cout << "\nLa Personne est de sexe [" << pp.sexe << "]";
 }
 
 void detruire(const Personne* pp) {
@@ -32,7 +32,7 @@ void detruire(const Personne* pp) {
 }
 
 void F_Personne() {
-	cout << "\nBienvenue sur le TP 2.2 - Personne\n";
+	cout << "\nBienvenue sur le TP 2.3 - Personne\n";
 
 	Personne* pp1 = creer();
 	initialiser(*pp1);

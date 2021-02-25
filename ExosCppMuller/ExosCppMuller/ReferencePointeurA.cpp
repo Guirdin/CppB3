@@ -25,7 +25,6 @@ void C_2_6a() {
 	cout << "\nBienvenue sur le TP 2.1a - Reference/Pointeur\n";
 	ptrInt ptr_a = nullptr;
 	unsigned a{10};
-	unsigned t1 = 5;
 
 	cout << "\nVeuillez saisir la valeur : ";
 	cin >> a;

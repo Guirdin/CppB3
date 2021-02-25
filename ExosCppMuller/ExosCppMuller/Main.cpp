@@ -56,9 +56,9 @@ auto main()-> int
 
 		case 11: restart("ReferencePointeurC"); break; // TP 2.1c
 
-		case 12: restart("Macro"); break; // TP 2.1c
+		case 12: restart("Macro"); break; // TP 2.2
 
-		case 13: restart("Personne"); break; // TP 2.1c
+		case 13: restart("Personne"); break; // TP 2.3
 		
 	}
 	return 0;

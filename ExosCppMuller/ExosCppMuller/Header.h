@@ -51,8 +51,8 @@ auto random(int min, int max) -> int;
 	void C_2_6a(); // TP 2.1a
 	void C_2_6b(); // TP 2.1b
 	void C_2_6c(); // TP 2.1c
-	//void Macro();
-	//void Personne();
+	void Macro(); // TP 2.2
+	void F_Personne(); // TP 2.3
 // Exercices Partie 2
 
 

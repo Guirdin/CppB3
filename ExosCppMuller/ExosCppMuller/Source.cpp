@@ -14,8 +14,8 @@ map<string, function<void() >> funcs = {
     { "ReferencePointeurA", C_2_6a },
     { "ReferencePointeurB", C_2_6b },
     { "ReferencePointeurC", C_2_6c },
-    //{ "Macro", Macro },
-    //{ "Personne", Personne },
+    { "Macro", Macro },
+    { "Personne", F_Personne },
 };
 
 auto restart(string fonction) -> void {
