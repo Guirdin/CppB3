@@ -27,6 +27,7 @@ void modifier(ptrDouble const & dd, const unsigned& taille,
 
 void destructeur(ptrDouble& dd) {
 	//test dd
+	cout << "\nDestruction du pointeur\n";
 	delete [] dd;
 	dd = nullptr;
 }

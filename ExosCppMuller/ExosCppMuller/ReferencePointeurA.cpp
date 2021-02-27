@@ -18,7 +18,10 @@ void affiche(const ptrInt& ptr, int valeur) {
 
 void destructeur(ptrInt& ptr) {
 	//test ptr
+	cout << "\nDestruction du pointeur\n";
 	delete ptr;
+	ptr = nullptr;
+
 }
 
 void C_2_6a() {

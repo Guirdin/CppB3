@@ -3,13 +3,15 @@
 #include <memory>
 
 using std::shared_ptr;
+using std::default_delete;
+
 typedef std::shared_ptr<double> ptrStdDouble;
 using ptrDouble = shared_ptr<double>;
 
 void constructeur(ptrDouble &dd, const unsigned & taille) {
 	// Teste taille > 0
 	// dd = new double [taille]{0.};
-	dd.reset(new double[taille]{0.}, std::default_delete<double[]>());
+	dd.reset(new double[taille]{0.}, default_delete<double[]>());
 	// test dd
 }
 
@@ -29,6 +31,7 @@ void modifier(ptrDouble const& dd, const unsigned& taille,
 
 void destructeur(ptrDouble& dd) {
 	//test dd
+	cout << "\nDestruction du pointeur\n";
 	dd.reset();
 }
 
@@ -42,15 +45,16 @@ double& get(ptrStdDouble& dd, const unsigned& taille, const unsigned& index) {
 
 void C_2_6c() {
 	cout << "\nBienvenue sur le TP 2.1c - Reference/Pointeur intelligent\n";
+
 	ptrStdDouble d1 = nullptr;
 	unsigned t1 = 5;
 	constructeur(d1, t1);
 	afficher(d1, t1);
 	modifier(d1, t1, 2, 3.13589985);
 	afficher(d1, t1);
-	std::cout << get(d1, t1, 2) << std::endl;
+	cout << get(d1, t1, 2) << endl;
 	get(d1, t1, 2) = 62.1;
-	std::cout << get(d1, t1, 2) << std::endl;
+	cout << get(d1, t1, 2) << endl;
 	afficher(d1, t1);
 	destructeur(d1);
 }

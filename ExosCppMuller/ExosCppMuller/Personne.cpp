@@ -12,21 +12,25 @@ struct Personne
 
 Personne* creer()
 {
+	cout << "\nCréation d'une personne\n";
 	return new Personne ;
 }
 
 void initialiser(Personne& pp){
+	cout << "\nInitialisation de la personne\n";
 	pp = { 10,"Paul",Masculin };
 }
 
 void afficher(const Personne& pp) {
-	cout << "\nLa Personne a pour numero [" << pp.numero << "]";
-	cout << "\nLa Personne se nomme [" << pp.nom << "]";
-	cout << "\nLa Personne est de sexe [" << pp.sexe << "]";
+	//if (pp != nullptr) {
+		cout << "\nLa Personne a pour numero [" << pp.numero << "]";
+		cout << "\nLa Personne se nomme [" << pp.nom << "]";
+		cout << "\nLa Personne est de sexe [" << pp.sexe << "]\n";
+	//}
 }
 
 void detruire(const Personne* pp) {
-	//test dd
+	cout << "\nDestruction de la personne\n";
 	delete pp;
 	pp = nullptr;
 }
@@ -34,8 +38,11 @@ void detruire(const Personne* pp) {
 void F_Personne() {
 	cout << "\nBienvenue sur le TP 2.3 - Personne\n";
 
-	Personne* pp1 = creer();
+	Personne* pp1 = nullptr;
+	pp1 = creer();
 	initialiser(*pp1);
 	afficher(*pp1);
 	detruire(pp1);
+	afficher(*pp1);
+
 }
