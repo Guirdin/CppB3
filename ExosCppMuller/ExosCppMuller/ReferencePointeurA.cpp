@@ -11,14 +11,14 @@ void constructeur(ptrInt& ptr, int valeur)
 }
 
 void affiche(const ptrInt& ptr, int valeur) {
-	cout << "\n\nLa valeur = " << valeur;
+	cout << "\nLa valeur = " << valeur;
 	cout << "\nL'adresse = " << &valeur;
 	cout << "\nLa valeur pointe = " << ptr;
 }
 
 void destructeur(ptrInt& ptr) {
 	//test ptr
-	cout << "\nDestruction du pointeur\n";
+	cout << "\n\nDestruction du pointeur\n";
 	delete ptr;
 	ptr = nullptr;
 

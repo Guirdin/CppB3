@@ -6,30 +6,34 @@ enum Sexe { Inconnue=0, Masculin=1, Feminin=2};
 struct Personne
 {
 	int numero;
-	char nom[10];
+	std::string nom{};
 	Sexe sexe;
 };
 
-Personne* creer()
+using ptrPersonne = Personne*;
+
+ptrPersonne creer()
 {
 	cout << "\nCréation d'une personne\n";
 	return new Personne ;
 }
 
-void initialiser(Personne& pp){
+void initialiser(ptrPersonne& pp){
 	cout << "\nInitialisation de la personne\n";
-	pp = { 10,"Paul",Masculin };
+	pp -> numero = 10;
+	pp -> nom = "Paul";
+	pp -> sexe = Masculin;
 }
 
-void afficher(const Personne& pp) {
-	//if (pp != nullptr) {
-		cout << "\nLa Personne a pour numero [" << pp.numero << "]";
-		cout << "\nLa Personne se nomme [" << pp.nom << "]";
-		cout << "\nLa Personne est de sexe [" << pp.sexe << "]\n";
-	//}
+void afficher(const ptrPersonne& pp) {
+	if (pp != nullptr) {
+		cout << "\nLa Personne a pour numero [" << pp -> numero << "]";
+		cout << "\nLa Personne se nomme [" << pp -> nom << "]";
+		cout << "\nLa Personne est de sexe [" << pp -> sexe << "]\n";
+	}
 }
 
-void detruire(const Personne* pp) {
+void detruire(ptrPersonne& pp) {
 	cout << "\nDestruction de la personne\n";
 	delete pp;
 	pp = nullptr;
@@ -38,11 +42,11 @@ void detruire(const Personne* pp) {
 void F_Personne() {
 	cout << "\nBienvenue sur le TP 2.3 - Personne\n";
 
-	Personne* pp1 = nullptr;
+	ptrPersonne pp1 = nullptr;
 	pp1 = creer();
-	initialiser(*pp1);
-	afficher(*pp1);
+	initialiser(pp1);
+	afficher(pp1);
 	detruire(pp1);
-	afficher(*pp1);
+	afficher(pp1);
 
 }
