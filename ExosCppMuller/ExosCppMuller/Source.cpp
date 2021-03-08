@@ -3,6 +3,7 @@
 const double pi = std::acos(-1);
 
 map<string, function<void() >> funcs = {
+// Exercices Partie 1
     { "NombreMystere", NombreMystere },
     { "Jeu421", Jeu421 },
     { "JeuDesAllumettes", JeuDesAllumettes },
@@ -11,11 +12,16 @@ map<string, function<void() >> funcs = {
     { "Fibonacci", Fibonacci },
     { "DeveloppementLimites", DeveloppementLimites },
     { "Maxfact", Maxfact },
+// Exercices Partie 2
     { "ReferencePointeurA", C_2_6a },
     { "ReferencePointeurB", C_2_6b },
     { "ReferencePointeurC", C_2_6c },
     { "Macro", Macro },
     { "Personne", F_Personne },
+// Exercices Partie 3
+    { "JeuDeCarte1", JeuDeCarte1 },
+    { "JeuDeCarte2", JeuDeCarte2 },
+    { "JeuDeCarteYUGIOH", JeuDeCarteYUGIOH },
 };
 
 auto restart(string fonction) -> void {

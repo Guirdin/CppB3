@@ -23,6 +23,11 @@ auto main()-> int
 	cout << "\nPour le TP 2.2 - Macro tapez (12)";
 	cout << "\nPour le TP 2.3 - Personne tapez (13)\n";
 
+	cout << "\nExercices Partie 3:";
+	cout << "\nPour le TP 3.1 - Jeu de carte 1 tapez (14)";
+	cout << "\nPour le TP 3.2 - Jeu de carte 2 tapez (15)";
+	cout << "\nPour le TP 3.3 - Jeu de carte YUGIOH tapez (16)\n";
+
 	cout << "\nPour Quitter tapez (0)\n";
 
 	cout << "\nVeuillez choisir un TP: ";
@@ -60,6 +65,13 @@ auto main()-> int
 
 		case 13: restart("Personne"); break; // TP 2.3
 		
+		case 14: restart("JeuDeCarte1"); break; // TP 3.1
+
+		case 15: restart("JeuDeCarte2"); break; // TP 3.2
+
+		case 16: restart("JeuDeCarteYUGIOH"); break; // TP 3.3
+
+
 	}
 	return 0;
 }
