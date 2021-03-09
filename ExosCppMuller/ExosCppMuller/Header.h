@@ -57,7 +57,7 @@ auto random(int min, int max) -> int;
 // Exercices Partie 2
 
 // Exercices Partie 3
-	void JeuDeCarte1(); // TP 3.1
+	//void JeuDeCarte1(); // TP 3.1
 	//void JeuDeCarte2(); // TP 3.2
 	//void JeuDeCarteYUGIOH(); // TP 3.3
 // Exercices Partie 3

@@ -1,5 +1,5 @@
 #include "Header.h"
-//#include "Partie3.h"
+#include "Partie3.h"
 
 auto main()-> int
 {
@@ -67,6 +67,8 @@ auto main()-> int
 		case 13: restart("Personne"); break; // TP 2.3
 		
 		case 14: restart("JeuDeCarte1"); break; // TP 3.1
+
+		//case 14: Partie3::TP::JeuDeCarte1; break; // TP 3.1
 
 		case 15: restart("JeuDeCarte2"); break; // TP 3.2
 

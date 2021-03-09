@@ -7,9 +7,10 @@ namespace Partie3 {
 
     class TP {
     public:
-        /*static void JeuDeCarte1();
-        static void JeuDeCarte2();
-        static void JeuDeCarteYUGIOH();*/
+        
+        static void JeuDeCarte1();
+        //static void JeuDeCarte2();
+        //static void JeuDeCarteYUGIOH();
     };
 }
 #endif // PARTIE3_H

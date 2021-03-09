@@ -1,56 +1,69 @@
 #include "Header.h"
-//#include "Partie3.h"
+#include "Partie3.h"
+#include "JeuDeCarte1.h"
 
 #include <iostream>
+#include <memory>
+
 
 //namespace Partie3 {
 
-	enum Couleur { PIQUE, COEUR = 1, CARREAU = 2, TREFLE = 3 };
+	Carte::Carte(Couleur couleur, std::string& valeur)
+		:
+		_couleur(couleur),
+		_valeur(valeur),
+	{};
 
-	class Carte
-	{
-		public:
-			Couleur couleur;
-			std::string valeur{};
-	};
-
-	using ptrCarte = Carte*;
-
-	ptrCarte creer()
-	{
-		cout << "\nCréation d'une Carte\n";
-		return new Carte;
+	Carte::~Carte() {
+		std::cout << __func__ << std::endl;
 	}
 
-	void initialiser(ptrCarte& pc) {
-		cout << "\nInitialisation de la Carte\n";
-		pc->valeur = "10";
-		pc->couleur = COEUR;
+	void Carte::setType(Couleur couleur) {
+		this->_couleur = couleur;
 	}
 
-	void afficher(const ptrCarte& pc) {
-		if (pc != nullptr) {
-			cout << "\nLa Carte à pour valeur [" << pc->valeur << "]";
-			cout << "\nLa Carte à la couleur [" << pc->couleur << "]\n";
+	void Carte::setValeur(std::string& valeur) {
+		this->_valeur = valeur;
+	}
+
+	void Carte::afficher() const {
+		std::cout << this->_couleur << std::endl;
+		std::cout << this->_valeur << std::endl;
+	}
+
+	bool Carte::equal(Carte& carte) {
+		return this == carte;
+	}
+
+	void Carte::affecter(Carte& carte) {
+		this = carte;
+	}
+
+	void Partie3::TP::JeuDeCarte1() {
+		cout << "\nBienvenue sur le TP 3.1 - Jeu de Carte (1) \n";
+
+		Carte c1(PIQUE, "As");
+		c1.afficher();
+
+		/*Carte c2(c1);
+		c2.afficher();
+		c2.setType(TREFLE);
+		c2.setValeur("Queen");
+		c2.afficher();
+		Carte c3(PIQUE, "2");
+		c2.affecter(c3);
+		c2.afficher();
+		c3.afficher();
+
+		if (c1.equal(c2)) {
+			cout << "C'est bon" << endl;
 		}
-	}
-
-	void detruire(ptrCarte& pc) {
-		cout << "\nDestruction de la Carte\n";
-		delete pc;
-		pc = nullptr;
-	}
-
-	void JeuDeCarte1() {
-		cout << "\nBienvenue sur le TP 3.1 - Carte\n";
-
-		//Carte c1(PIQUE, "As");
-		ptrCarte pc1 = nullptr;
-		pc1 = creer();
-		initialiser(pc1);
-		afficher(pc1);
-		detruire(pc1);
-		afficher(pc1);
-
+		else {
+			std::cerr << "Une erreur survenue" << endl;
+			c1.afficher();
+			c2.afficher();
+		}*/
 	}
 //}
+
+

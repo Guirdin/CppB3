@@ -1,4 +1,5 @@
 #include "Header.h"
+#include "Partie3.h"
 
 const double pi = std::acos(-1);
 
@@ -19,7 +20,7 @@ map<string, function<void() >> funcs = {
     { "Macro", Macro },
     { "Personne", F_Personne },
 // Exercices Partie 3
-    { "JeuDeCarte1", JeuDeCarte1 },
+    { "JeuDeCarte1", Partie3::TP::JeuDeCarte1 },
     //{ "JeuDeCarte2", JeuDeCarte2 },
     //{ "JeuDeCarteYUGIOH", JeuDeCarteYUGIOH },
 };
