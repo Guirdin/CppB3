@@ -1,52 +1,56 @@
 #include "Header.h"
+//#include "Partie3.h"
+
 #include <iostream>
 
-enum Sexe { Inconnue = 0, Masculin = 1, Feminin = 2 };
+//namespace Partie3 {
 
-struct Personne
-{
-	int numero;
-	std::string nom{};
-	Sexe sexe;
-};
+	enum Couleur { PIQUE, COEUR = 1, CARREAU = 2, TREFLE = 3 };
 
-using ptrPersonne = Personne*;
+	class Carte
+	{
+		public:
+			Couleur couleur;
+			std::string valeur{};
+	};
 
-ptrPersonne creer()
-{
-	cout << "\nCréation d'une personne\n";
-	return new Personne;
-}
+	using ptrCarte = Carte*;
 
-void initialiser(ptrPersonne& pp) {
-	cout << "\nInitialisation de la personne\n";
-	pp->numero = 10;
-	pp->nom = "Paul";
-	pp->sexe = Masculin;
-}
-
-void afficher(const ptrPersonne& pp) {
-	if (pp != nullptr) {
-		cout << "\nLa Personne a pour numero [" << pp->numero << "]";
-		cout << "\nLa Personne se nomme [" << pp->nom << "]";
-		cout << "\nLa Personne est de sexe [" << pp->sexe << "]\n";
+	ptrCarte creer()
+	{
+		cout << "\nCréation d'une Carte\n";
+		return new Carte;
 	}
-}
 
-void detruire(ptrPersonne& pp) {
-	cout << "\nDestruction de la personne\n";
-	delete pp;
-	pp = nullptr;
-}
+	void initialiser(ptrCarte& pc) {
+		cout << "\nInitialisation de la Carte\n";
+		pc->valeur = "10";
+		pc->couleur = COEUR;
+	}
 
-void JeuDeCarte1() {
-	cout << "\nBienvenue sur le TP 2.3 - Personne\n";
+	void afficher(const ptrCarte& pc) {
+		if (pc != nullptr) {
+			cout << "\nLa Carte à pour valeur [" << pc->valeur << "]";
+			cout << "\nLa Carte à la couleur [" << pc->couleur << "]\n";
+		}
+	}
 
-	ptrPersonne pp1 = nullptr;
-	pp1 = creer();
-	initialiser(pp1);
-	afficher(pp1);
-	detruire(pp1);
-	afficher(pp1);
+	void detruire(ptrCarte& pc) {
+		cout << "\nDestruction de la Carte\n";
+		delete pc;
+		pc = nullptr;
+	}
 
-}
+	void JeuDeCarte1() {
+		cout << "\nBienvenue sur le TP 3.1 - Carte\n";
+
+		//Carte c1(PIQUE, "As");
+		ptrCarte pc1 = nullptr;
+		pc1 = creer();
+		initialiser(pc1);
+		afficher(pc1);
+		detruire(pc1);
+		afficher(pc1);
+
+	}
+//}

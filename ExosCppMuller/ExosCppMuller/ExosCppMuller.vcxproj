@@ -140,12 +140,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Header.h" />
+    <ClInclude Include="Partie3.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DeveloppementLimites.cpp" />
     <ClCompile Include="Fibonacci.cpp" />
     <ClCompile Include="Integrale.cpp" />
     <ClCompile Include="Jeu421.cpp" />
+    <ClCompile Include="JeuDeCarte1.cpp" />
+    <ClCompile Include="JeuDeCarte2.cpp" />
+    <ClCompile Include="JeuDeCarteYUGIOH.cpp" />
     <ClCompile Include="JeuDesAllumettes.cpp" />
     <ClCompile Include="Macro.cpp" />
     <ClCompile Include="Main.cpp" />

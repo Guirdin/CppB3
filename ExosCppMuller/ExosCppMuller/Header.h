@@ -58,6 +58,42 @@ auto random(int min, int max) -> int;
 
 // Exercices Partie 3
 	void JeuDeCarte1(); // TP 3.1
-	void JeuDeCarte2(); // TP 3.2
-	void JeuDeCarteYUGIOH(); // TP 3.3
+	//void JeuDeCarte2(); // TP 3.2
+	//void JeuDeCarteYUGIOH(); // TP 3.3
 // Exercices Partie 3
+
+namespace Header {
+
+	inline void SecureIstream(std::istream& is,
+		unsigned& val,
+		const std::string& msgErreur2)
+	{
+		using std::cerr;
+		using std::endl;
+		do {
+			if (!is.good()) {
+				cerr << msgErreur2 << endl; std::cerr.flush();
+				is.clear();
+				is.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			};
+			is >> val;
+		} while (!is.good());
+
+	}
+	// T classe avec operator>> doit etre defini
+	template <typename T> void SecureIstream(std::istream& is, T& val, const std::string& msgErreur2)
+	{
+		using std::cerr;
+		using std::endl;
+		do {
+			if (!is.good()) {
+				cerr << msgErreur2 << endl; std::cerr.flush();
+				is.clear();
+				is.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			};
+			is >> val;
+		} while (!is.good());
+
+	}
+
+}

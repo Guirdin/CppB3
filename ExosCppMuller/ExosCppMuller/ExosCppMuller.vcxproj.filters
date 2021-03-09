@@ -19,10 +19,16 @@
     <Filter Include="Fichiers sources\Partie2">
       <UniqueIdentifier>{cc060ac5-4c37-403e-b001-9ca53c502544}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers sources\Partie3">
+      <UniqueIdentifier>{f76cdb25-9d46-4449-947a-49896005d463}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header.h">
       <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Partie3.h">
+      <Filter>Fichiers sources\Partie3</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -70,6 +76,15 @@
     </ClCompile>
     <ClCompile Include="Personne.cpp">
       <Filter>Fichiers sources\Partie2</Filter>
+    </ClCompile>
+    <ClCompile Include="JeuDeCarte1.cpp">
+      <Filter>Fichiers sources\Partie3</Filter>
+    </ClCompile>
+    <ClCompile Include="JeuDeCarte2.cpp">
+      <Filter>Fichiers sources\Partie3</Filter>
+    </ClCompile>
+    <ClCompile Include="JeuDeCarteYUGIOH.cpp">
+      <Filter>Fichiers sources\Partie3</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

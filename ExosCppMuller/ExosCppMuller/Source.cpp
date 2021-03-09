@@ -20,8 +20,8 @@ map<string, function<void() >> funcs = {
     { "Personne", F_Personne },
 // Exercices Partie 3
     { "JeuDeCarte1", JeuDeCarte1 },
-    { "JeuDeCarte2", JeuDeCarte2 },
-    { "JeuDeCarteYUGIOH", JeuDeCarteYUGIOH },
+    //{ "JeuDeCarte2", JeuDeCarte2 },
+    //{ "JeuDeCarteYUGIOH", JeuDeCarteYUGIOH },
 };
 
 auto restart(string fonction) -> void {
