@@ -9,7 +9,7 @@ namespace Partie3 {
     public:
         
         static void JeuDeCarte1();
-        //static void JeuDeCarte2();
+        static void JeuDeCarte2();
         //static void JeuDeCarteYUGIOH();
     };
 }

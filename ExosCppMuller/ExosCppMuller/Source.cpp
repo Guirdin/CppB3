@@ -21,7 +21,7 @@ map<string, function<void() >> funcs = {
     { "Personne", F_Personne },
 // Exercices Partie 3
     { "JeuDeCarte1", Partie3::TP::JeuDeCarte1 },
-    //{ "JeuDeCarte2", JeuDeCarte2 },
+    { "JeuDeCarte2", Partie3::TP::JeuDeCarte2 },
     //{ "JeuDeCarteYUGIOH", JeuDeCarteYUGIOH },
 };
 

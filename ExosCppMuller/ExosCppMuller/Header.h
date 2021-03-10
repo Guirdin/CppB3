@@ -56,12 +56,6 @@ auto random(int min, int max) -> int;
 	void F_Personne(); // TP 2.3
 // Exercices Partie 2
 
-// Exercices Partie 3
-	//void JeuDeCarte1(); // TP 3.1
-	//void JeuDeCarte2(); // TP 3.2
-	//void JeuDeCarteYUGIOH(); // TP 3.3
-// Exercices Partie 3
-
 namespace Header {
 
 	inline void SecureIstream(std::istream& is,

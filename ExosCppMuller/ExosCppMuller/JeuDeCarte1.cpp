@@ -1,14 +1,14 @@
 //#include "Header.h"
-#include "JeuDeCarte1.h"
 #include "Partie3.h"
+#include "JeuDeCarte1.h"
+
 #include <iostream>
 #include <memory>
 
-
-namespace Partie3 {
+namespace JeuDeCarte1 {
 
 	//constructeur
-    Carte::Carte(Couleur couleur, const std::string& valeur)
+	Carte::Carte(Couleur couleur, const std::string& valeur)
 		:
 		_couleur(couleur),
 		_valeur(valeur)
@@ -42,10 +42,10 @@ namespace Partie3 {
 	}
 
 	bool Carte::equal(Carte& carte) {
-		if (this->_couleur == carte._couleur) 
+		if (this->_couleur == carte._couleur)
 		{
-			if (this->_valeur == carte._valeur) { return true;}
-			else {return false;}	
+			if (this->_valeur == carte._valeur) { return true; }
+			else { return false; }
 		}
 		else {
 			return false;
@@ -56,19 +56,22 @@ namespace Partie3 {
 		this->_couleur = carte._couleur;
 		this->_valeur = carte._valeur;
 	}
-	
-    void TP::JeuDeCarte1() {
-        std::cout << "\nBienvenue sur le TP 3.1 - Jeu de Carte (1) \n";
+}
 
-        Carte c1(Carte::Couleur::PIQUE, "As");
+namespace Partie3 {
+
+	void TP::JeuDeCarte1() {
+		std::cout << "\nBienvenue sur le TP 3.1 - Jeu de Carte (1) \n";
+
+		JeuDeCarte1::Carte c1(JeuDeCarte1::Carte::Couleur::PIQUE, "As");
 		c1.afficher();
 
-		Carte c2(c1);
+		JeuDeCarte1::Carte c2(c1);
 		c2.afficher();
-		c2.setType(Carte::Couleur::TREFLE);
+		c2.setType(JeuDeCarte1::Carte::Carte::Couleur::TREFLE);
 		c2.setValeur("Queen");
 		c2.afficher();
-		Carte c3(Carte::Couleur::PIQUE, "2");
+		JeuDeCarte1::Carte c3(JeuDeCarte1::Carte::Carte::Couleur::PIQUE, "2");
 		c2.affecter(c3);
 		c2.afficher();
 		c3.afficher();
@@ -83,5 +86,3 @@ namespace Partie3 {
 		}
 	}
 }
-
-

@@ -68,8 +68,6 @@ auto main()-> int
 		
 		case 14: restart("JeuDeCarte1"); break; // TP 3.1
 
-		//case 14: Partie3::TP::JeuDeCarte1; break; // TP 3.1
-
 		case 15: restart("JeuDeCarte2"); break; // TP 3.2
 
 		case 16: restart("JeuDeCarteYUGIOH"); break; // TP 3.3
