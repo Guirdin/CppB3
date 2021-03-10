@@ -4,29 +4,28 @@
 #include <iostream>
 #include <string>
 
+namespace Partie3 {
+    class Carte
+    {
+       public:
+            enum Couleur { PIQUE = 0, COEUR = 1, CARREAU = 2, TREFLE = 3 };
 
-class Carte
-{
-   enum Couleur { PIQUE = 0, COEUR = 1, CARREAU = 2, TREFLE = 3 };
+            Carte( Couleur, const std::string&); //constructeur
+            Carte(Carte&); //constructeur - copie
+            virtual ~Carte(); // destructeur
 
-   public:
+            void setType(Couleur); // setter type
+            void setValeur(const std::string&);// setter valeur
 
-        Carte(Couleur, std::string&);
-        Carte(Carte&);
-        virtual ~Carte();
+            void afficher() const ;
+            bool equal(Carte&) ;
+            void affecter(Carte&);
 
-        void setType(Couleur);
-        void setValeur(std::string&);
+        protected:
 
-        void afficher() const {};
-        bool equal(Carte&) {};
-        void affecter(Carte&);
+            Couleur _couleur;
+            std::string _valeur;
 
-    protected:
-
-        Couleur _couleur;
-        std::string _valeur;
-
-};
-
+    };
+}
 #endif

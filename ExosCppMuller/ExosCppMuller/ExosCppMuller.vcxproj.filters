@@ -30,6 +30,9 @@
     <ClInclude Include="Partie3.h">
       <Filter>Fichiers sources\Partie3</Filter>
     </ClInclude>
+    <ClInclude Include="JeuDeCarte1.h">
+      <Filter>Fichiers sources\Partie3</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
@@ -85,9 +88,6 @@
     </ClCompile>
     <ClCompile Include="JeuDeCarteYUGIOH.cpp">
       <Filter>Fichiers sources\Partie3</Filter>
-    </ClCompile>
-    <ClCompile Include="Partie3.cpp">
-      <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
