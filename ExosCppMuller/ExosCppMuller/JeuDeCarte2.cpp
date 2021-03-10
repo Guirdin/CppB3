@@ -1,64 +1,58 @@
 //#include "Header.h"
 #include "Partie3.h"
-#include "JeuDeCarte2.h"
+//#include "JeuDeCarte2.h"
 
 #include <iostream>
 #include <memory>
 
-namespace JeuDeCarte2 {
-
-	//constructeur
-	Carte::Carte(Couleur couleur, const std::string& valeur)
-		:
-		_couleur(couleur),
-		_valeur(valeur)
-	{};
-
-	//constructeur - copie
-	Carte::Carte(Carte& crt)
-		:
-		Carte(crt._couleur, crt._valeur)
-	{};
-
-	// destructeur
-	Carte::~Carte() {
-		std::cout << __func__ << std::endl;
-	}
-
-	Carte& Carte::operator=(const Carte& c) {
-		std::cerr << "operator=" << std::endl;
-		if (&c != this) {
-			this->_couleur = c._couleur;
-			this->_valeur = c._valeur;
-		}
-		return *this;
-	}
-
-	bool Carte::operator==(const Carte& c) const {
-		std::cerr << "operator==" << std::endl;
-		if (&c == this) return true;
-		return (this->_couleur == c._couleur &&
-			this->_valeur == c._valeur);
-	}
-
-	bool Carte::operator!=(const Carte& c) const {
-		std::cerr << "operator!=" << std::endl;
-		if (&c == this) return false;
-		return (!(this->operator==(c)));
-	}
-
-	// setter type - enumération Couleur
-	void Carte::setType(Couleur couleur) {
-		this->_couleur = couleur;
-	}
-
-	// setter valeur - string valeur
-	void Carte::setValeur(const std::string& valeur) {
-		this->_valeur = valeur;
-	}
-}
-
 namespace Partie3 {
+
+	inline namespace JeuDeCarte2 {
+
+		//constructeur
+		Carte::Carte(Couleur couleur, const std::string& valeur)
+			:
+			_couleur(couleur),
+			_valeur(valeur)
+		{};
+
+		//constructeur - copie
+		Carte::Carte(Carte& crt)
+			:
+			Carte(crt._couleur, crt._valeur)
+		{};
+
+		// destructeur
+		Carte::~Carte() {
+			std::cout << __func__ << std::endl;
+		}
+
+		Carte& Carte::operator=(const Carte& c) {
+			std::cerr << "operator=" << std::endl;
+			if (&c != this) {
+				this->_couleur = c._couleur;
+				this->_valeur = c._valeur;
+			}
+			return *this;
+		}
+
+		// setter type - enumération Couleur
+		void Carte::setType(Couleur couleur) {
+			this->_couleur = couleur;
+		}
+
+		// setter valeur - string valeur
+		void Carte::setValeur(const std::string& valeur) {
+			this->_valeur = valeur;
+		}
+	
+		std::ostream& operator<<(std::ostream& flux, const Carte& carte)
+		{
+			//Affichage des attributs
+			flux << "Carte: " << carte._valeur << " de " << carte._couleur;
+			return flux;
+		}
+	}
 
 	void TP::JeuDeCarte2() {
 		std::cout << "\nBienvenue sur le TP 3.2 - Jeu de Carte (2) \n";

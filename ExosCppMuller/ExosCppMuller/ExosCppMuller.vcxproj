@@ -139,10 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Couleur.h" />
     <ClInclude Include="Header.h" />
-    <ClInclude Include="JeuDeCarte1.h" />
-    <ClInclude Include="JeuDeCarte2.h" />
     <ClInclude Include="Partie3.h" />
   </ItemGroup>
   <ItemGroup>
