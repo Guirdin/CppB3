@@ -83,7 +83,7 @@
     <ClCompile Include="JeuDeCarte2.cpp">
       <Filter>Fichiers sources\Partie3</Filter>
     </ClCompile>
-    <ClCompile Include="JeuDeCarteYUGIOH.cpp">
+    <ClCompile Include="JeuDeCarteMonstreYUGIOH.cpp">
       <Filter>Fichiers sources\Partie3</Filter>
     </ClCompile>
   </ItemGroup>

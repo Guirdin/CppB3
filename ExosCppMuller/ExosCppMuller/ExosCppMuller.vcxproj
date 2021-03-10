@@ -116,6 +116,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -149,7 +150,7 @@
     <ClCompile Include="Jeu421.cpp" />
     <ClCompile Include="JeuDeCarte1.cpp" />
     <ClCompile Include="JeuDeCarte2.cpp" />
-    <ClCompile Include="JeuDeCarteYUGIOH.cpp" />
+    <ClCompile Include="JeuDeCarteMonstreYUGIOH.cpp" />
     <ClCompile Include="JeuDesAllumettes.cpp" />
     <ClCompile Include="Macro.cpp" />
     <ClCompile Include="Main.cpp" />

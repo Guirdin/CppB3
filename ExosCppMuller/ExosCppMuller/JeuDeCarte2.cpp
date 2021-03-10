@@ -1,9 +1,8 @@
 //#include "Header.h"
 #include "Partie3.h"
-//#include "JeuDeCarte2.h"
-
-#include <iostream>
-#include <memory>
+using std::cout;
+using std::cin;
+using std::endl;
 
 namespace Partie3 {
 
@@ -71,7 +70,7 @@ namespace Partie3 {
 			cout << "C'est bon" << endl;
 		}
 		else {
-			std::cerr << "Une erreur survenue" << endl;
+			std::cerr << "Une erreur est survenue" << endl;
 		}
 	}
 }

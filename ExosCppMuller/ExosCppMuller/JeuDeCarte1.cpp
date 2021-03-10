@@ -1,13 +1,14 @@
 //#include "Header.h"
 #include "Partie3.h"
-//#include "JeuDeCarte1.h"
-
-#include <iostream>
-#include <memory>
+using std::cout;
+using std::cin;
+using std::endl;
 
 namespace Partie3 {
 
 	inline namespace JeuDeCarte1 {
+
+		//std::array<std::string, 4> Carte::NomCouleur = { "PIQUE", "COEUR", "CARREAU", "TREFLE" };
 
 		//constructeur
 		Carte::Carte(Couleur couleur, const std::string& valeur)
@@ -16,7 +17,7 @@ namespace Partie3 {
 			_valeur(valeur)
 		{};
 
-		//constructeur - copie
+		//copie constructeur
 		Carte::Carte(Carte& crt)
 			:
 			Carte(crt._couleur, crt._valeur)
@@ -27,33 +28,23 @@ namespace Partie3 {
 			std::cout << __func__ << std::endl;
 		}
 
-		// setter type - enumération Couleur
+		// setter type - copie et donne la couleur de la carte passé en paramètre
 		void Carte::setType(Couleur couleur) {
 			this->_couleur = couleur;
 		}
 
-		// setter valeur - string valeur
+		// setter de valeur - copie et donne la valeur de la carte passé en paramètre
 		void Carte::setValeur(const std::string& valeur) {
 			this->_valeur = valeur;
 		}
 
+		// méthode d'affichage - affiche l'objet suivis par sa couleur et sa valeur
 		void Carte::afficher() const {
-			std::cout << this << std::endl;
-			std::cout << this->_couleur << std::endl;
-			std::cout << this->_valeur << std::endl;
+			std::cout << std::endl <<  "Carte [ " << this << " ]" << std::endl;
+			std::cout << this->_valeur << " de " << this->_couleur << std::endl;
 		}
 
-		/*bool Carte::equal(Carte& carte) {
-			if (this->_couleur == carte._couleur)
-			{
-				if (this->_valeur == carte._valeur) { return true; }
-				else { return false; }
-			}
-			else {
-				return false;
-			}
-		}*/
-
+		// méthode d'affectation - copie et donne les propriétés de la carte passé en paramètre
 		void Carte::affecter(Carte& carte) {
 			this->_couleur = carte._couleur;
 			this->_valeur = carte._valeur;
@@ -79,7 +70,7 @@ namespace Partie3 {
 			cout << "C'est bon" << endl;
 		}
 		else {
-			std::cerr << "Une erreur survenue" << endl;
+			std::cerr << endl << "Une erreur est survenue: Les cartes ne sont pas égales" << endl;
 			c1.afficher();
 			c2.afficher();
 		}

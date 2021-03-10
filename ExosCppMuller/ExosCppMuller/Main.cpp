@@ -70,8 +70,7 @@ auto main()-> int
 
 		case 15: restart("JeuDeCarte2"); break; // TP 3.2
 
-		case 16: restart("JeuDeCarteYUGIOH"); break; // TP 3.3
-
+		case 16: restart("JeuDeCarteMonstreYUGIOH"); break; // TP 3.3
 
 	}
 	return 0;

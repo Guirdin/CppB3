@@ -1,7 +1,7 @@
-#include "Header.h"
-
 #ifndef PARTIE3_H
 #define PARTIE3_H
+
+#include <iostream>
 
 namespace Partie3 {
 
@@ -11,6 +11,7 @@ namespace Partie3 {
         {
         public:
             enum Couleur : unsigned short { PIQUE, COEUR, CARREAU, TREFLE };
+            //static std::array<std::string, 4> NomCouleur;
 
             Carte(Couleur, const std::string&); //constructeur
             Carte(Carte&); //constructeur - copie
@@ -22,7 +23,7 @@ namespace Partie3 {
             //-> pour heritage : virtual void afficher() const
             virtual void afficher() const;
 
-            bool equal(Carte& carte) {
+            inline bool equal(Carte& carte) {
                 if (this->_couleur == carte._couleur)
                 {
                     if (this->_valeur == carte._valeur) { return true; }
@@ -89,12 +90,51 @@ namespace Partie3 {
         };
     }
 
+    inline namespace JeuDeCarteMonstreYUGIOH {
+
+        //enum class Couleur : unsigned short { PIQUE, COEUR, CARREAU, TREFLE };
+
+        class Carte_Monstre
+        {
+        public:
+            enum Attribut : unsigned short { TENEBRE, TERRE, FEU, LUMIERE, EAU, VENT };
+            //static std::array<std::string, 4> NomAttribut;
+
+            //-> pour heritage : virtual void afficher() const
+            virtual std::string afficher() const;
+
+            //constructeur
+            Carte_Monstre(Attribut, const int&, const int&, const std::string&,
+                const int&, const std::string&, const std::string&, const [2] std::string&);
+
+            Attribut getAttribut();
+            int getATK();
+            int getDEF();
+            std::string getDescription();
+            int getNiveau();
+            std::string getNomCarte();
+            std::string getNumeroCarte();
+            [2]std::string getType();
+
+        private:
+
+            Attribut a_attribut;
+            int a_ATK;
+            int a_DEF;
+            std::string a_description;
+            int a_niveau;
+            std::string a_nomCarte;
+            std::string a_numeroCarte;
+            std::string a_type[2];
+        };
+    }
+
     class TP {
     public:
         
         static void JeuDeCarte1();
         static void JeuDeCarte2();
-        //static void JeuDeCarteYUGIOH();
+        static void JeuDeCarteMonstreYUGIOH();
     };
 }
 #endif // PARTIE3_H
