@@ -15,12 +15,20 @@ namespace Partie3 {
         public:
             enum Couleur : unsigned short { PIQUE, COEUR, CARREAU, TREFLE };
 
-            Carte(Couleur, const std::string&); //constructeur
-            Carte(Carte&); //constructeur - copie
-            ~Carte(); // destructeur
+            // constructeur
+            Carte(Couleur, const std::string&);
 
-            void setType(const Couleur); // propriété setter -> type
-            void setValeur(const std::string&);// propriété setter -> valeur
+            // constructeur - copie
+            Carte(Carte&);
+
+            // destructeur
+            ~Carte(); 
+
+            // propriété setter -> type
+            void setType(const Couleur);
+
+            // propriété setter -> valeur
+            void setValeur(const std::string&);
 
             //-> pour heritage : virtual void afficher() const
             virtual void afficher() const;
@@ -54,10 +62,10 @@ namespace Partie3 {
         {
         public:
 
-            //constructeur
+            // constructeur
             Carte(Couleur, const std::string&); 
 
-            //constructeur - copie
+            // constructeur - copie
             Carte(Carte&); 
 
             //-> pour heritage : virtual ~Carte(); destructeur
@@ -123,7 +131,7 @@ namespace Partie3 {
             //-> pour heritage : virtual void afficher() const
             virtual void afficher() const;
 
-            //constructeur
+            // constructeur
             Carte_Monstre(const std::string&, Attribut, const int&, const std::string&, Type, 
                 TypeCarte, const std::string&, const int&, const int&
             );
@@ -158,6 +166,44 @@ namespace Partie3 {
 
     inline namespace CarteMagiePiegeYUGIOH {
 
+        class Carte_MagiePiege abstract
+        {
+        public:
+
+            enum Icone : unsigned short { NORMAL, TERRAIN, EQUIPEMENT, 
+                CONTINUE, JEU_RAPIDE, RITUELLE, CONTRE_PIEGE };
+
+            class Carte_Magie {
+            public:
+
+                // constructeur
+                Carte_Magie();
+
+                //-> pour heritage : virtual void afficher() const
+                virtual void afficher() const;
+            };
+
+            class Carte_Piege {
+            public:
+
+                // constructeur
+                Carte_Piege();
+
+                //-> pour heritage : virtual void afficher() const
+                virtual void afficher() const;
+            };
+
+            std::string getDescriptionCarte() const;
+            std::string getNomCarte() const;
+            std::string getNumeroCarte() const;
+
+        private:
+
+            std::string a_descriptionCarte;
+            std::string a_nomCarte;
+            std::string a_numeroCarte;
+
+        };
     }
 
     class TP {
