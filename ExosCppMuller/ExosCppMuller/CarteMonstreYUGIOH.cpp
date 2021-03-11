@@ -11,7 +11,7 @@ namespace Partie3 {
 		//constructeur
 		Carte_Monstre::Carte_Monstre(Attribut attribut, const int& ATK, const int& DEF,
 			const std::string& description, const int& niveau, const std::string& nomCarte,
-			const std::string& numeroCarte/*, const [2] std::string& type*/)
+			const std::string& numeroCarte, TypeCarte typeCarte, Type type)
 			:
 			a_attribut(attribut),
 			a_ATK(ATK),
@@ -19,8 +19,11 @@ namespace Partie3 {
 			a_description(description),
 			a_niveau(niveau),
 			a_nomCarte(nomCarte),
-			a_numeroCarte(numeroCarte)
-			//a_type(type)
+			a_numeroCarte(numeroCarte),
+
+			a_typeCarte(typeCarte),
+			a_type(type)
+
 		{};
 
 		Carte_Monstre::Attribut Carte_Monstre::getAttribut() const{
@@ -44,11 +47,14 @@ namespace Partie3 {
 		std::string Carte_Monstre::getNumeroCarte() const{
 			return this->a_numeroCarte;
 		};
-		/*[2] std::string Carte_Monstre::getType() const{
+		Carte_Monstre::TypeCarte Carte_Monstre::getTypeCarte() const {
+			return this->a_typeCarte;
+		};
+		Carte_Monstre::Type Carte_Monstre::getType() const {
 			return this->a_type;
-		};*/
+		};
 
-		std::string Carte_Monstre::afficher() const {
+		void Carte_Monstre::afficher() const {
 			std::cout << std::endl << "Carte [ " << a_nomCarte << " ]" << std::endl;
 			std::cout << "Attribut: " << this->a_attribut << std::endl;
 			std::cout << "Attaque: " << this->a_ATK << std::endl;
@@ -56,16 +62,16 @@ namespace Partie3 {
 			std::cout << "Description: " << this->a_description << std::endl;
 			std::cout << "Niveau: " << this->a_niveau << std::endl;
 			std::cout << "Numéro: " << this->a_numeroCarte << std::endl;
-			//std::cout << "Type: " << this->a_type << std::endl;
+			std::cout << "Type: [" << this->a_type << "/" << this->a_typeCarte << "]" << std::endl;
 		}
 	}
 
 	void TP::CarteMonstreYUGIOH() {
 		std::cout << "\nBienvenue sur le TP 3.3 - Jeu de Carte YU-GI-OH \n";
 
-		JeuDeCarte1::Carte c1(JeuDeCarte1::Carte::PIQUE, "As");
-		CarteMonstreYUGIOH::Carte_Monstre cm1(CarteMonstreYUGIOH::Carte_Monstre::TENEBRE, 1400,
-			);
+		//JeuDeCarte1::Carte c1(JeuDeCarte1::Carte::PIQUE, "As");
+		/*CarteMonstreYUGIOH::Carte_Monstre cm1(CarteMonstreYUGIOH::Carte_Monstre::TENEBRE, 2800,
+			);*/
 		
 	}
 }

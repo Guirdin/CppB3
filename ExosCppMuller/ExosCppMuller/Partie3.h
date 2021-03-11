@@ -2,6 +2,7 @@
 #define PARTIE3_H
 
 #include <iostream>
+#include <array>
 
 namespace Partie3 {
 
@@ -11,7 +12,7 @@ namespace Partie3 {
         {
         public:
             enum Couleur : unsigned short { PIQUE, COEUR, CARREAU, TREFLE };
-            //static std::array<std::string, 4> NomCouleur;
+            static const std::array<std::string, 4> NomCouleur;
 
             Carte(Couleur, const std::string&); //constructeur
             Carte(Carte&); //constructeur - copie
@@ -46,8 +47,7 @@ namespace Partie3 {
 
     inline namespace JeuDeCarte2 {
         
-        //enum class Couleur : unsigned short { PIQUE, COEUR, CARREAU, TREFLE };
-        enum Couleur : unsigned short { PIQUE, COEUR, CARREAU, TREFLE };
+        enum class Couleur : unsigned short { PIQUE, COEUR, CARREAU, TREFLE };
 
         class Carte
         {
@@ -91,20 +91,28 @@ namespace Partie3 {
 
     inline namespace CarteMonstreYUGIOH {
 
-        //enum class Couleur : unsigned short { PIQUE, COEUR, CARREAU, TREFLE };
-
         class Carte_Monstre
         {
         public:
-            enum Attribut : unsigned short { TENEBRE, TERRE, FEU, LUMIERE, EAU, VENT };
-            //static std::array<std::string, 4> NomAttribut;
+            enum TypeCarte : unsigned short { NORMAL, EFFET, RITUEL, FUSION, SYNCHRO, XYZ };
+
+            enum Attribut : unsigned short { TENEBRE, TERRE, FEU, LUMIERE, EAU, VENT, DIVIN };
+
+            enum Type : unsigned short { DRAGON, ZOMBIE, DEMON, PYRO, SERPENT_DE_MER, ROCHER,
+                MACHINE, POISSON, DINOSAURE, INSECTE, BETE, BETE_GUERRIER, PLANTE,
+                AQUA, GUERRIER, BETE_AILEE, ELFE, MAGICIEN,TONNERRE, REPTILE, PSYCHIQUE,
+                WYRM, CYBERSE, BETE_DIVINE};
+
+
+            static std::array<std::string, 7> NomAttribut;
 
             //-> pour heritage : virtual void afficher() const
-            virtual std::string afficher() const;
+            virtual void afficher() const;
 
             //constructeur
             Carte_Monstre(Attribut, const int&, const int&, const std::string&,
-                const int&, const std::string&, const std::string&/*, const [2] std::string&*/);
+                const int&, const std::string&, const std::string&, TypeCarte, Type
+            );
 
             Attribut getAttribut() const;
             int getATK() const;
@@ -113,7 +121,8 @@ namespace Partie3 {
             int getNiveau() const;
             std::string getNomCarte() const;
             std::string getNumeroCarte() const;
-            //[2]std::string getType() const;
+            TypeCarte getTypeCarte() const;
+            Type getType() const;
 
         private:
 
@@ -124,7 +133,9 @@ namespace Partie3 {
             int a_niveau;
             std::string a_nomCarte;
             std::string a_numeroCarte;
-            //std::string a_type[2];
+            TypeCarte a_typeCarte;
+            Type a_type;
+
         };
     }
 

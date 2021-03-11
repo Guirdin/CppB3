@@ -150,7 +150,7 @@
     <ClCompile Include="Jeu421.cpp" />
     <ClCompile Include="JeuDeCarte1.cpp" />
     <ClCompile Include="JeuDeCarte2.cpp" />
-    <ClCompile Include="JeuDeCarteMonstreYUGIOH.cpp" />
+    <ClCompile Include="CarteMonstreYUGIOH.cpp" />
     <ClCompile Include="JeuDesAllumettes.cpp" />
     <ClCompile Include="Macro.cpp" />
     <ClCompile Include="Main.cpp" />

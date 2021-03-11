@@ -8,7 +8,7 @@ namespace Partie3 {
 
 	inline namespace JeuDeCarte1 {
 
-		//std::array<std::string, 4> Carte::NomCouleur = { "PIQUE", "COEUR", "CARREAU", "TREFLE" };
+		const std::array<std::string, 4> Carte::NomCouleur = { "PIQUE", "COEUR", "CARREAU", "TREFLE" };
 
 		//constructeur
 		Carte::Carte(Couleur couleur, const std::string& valeur)

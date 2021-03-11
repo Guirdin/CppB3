@@ -48,7 +48,7 @@ namespace Partie3 {
 		std::ostream& operator<<(std::ostream& flux, const Carte& carte)
 		{
 			//Affichage des attributs
-			flux << "Carte: " << carte._valeur << " de " << carte._couleur;
+			flux << "Carte: " << carte._valeur << " de " << static_cast<int>(carte._couleur);
 			return flux;
 		}
 	}
