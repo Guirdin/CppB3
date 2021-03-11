@@ -110,8 +110,8 @@ namespace Partie3 {
             virtual void afficher() const;
 
             //constructeur
-            Carte_Monstre(Attribut, const int&, const int&, const std::string&,
-                const int&, const std::string&, const std::string&, TypeCarte, Type
+            Carte_Monstre(const std::string&, Attribut, const int&, const std::string&, Type, 
+                TypeCarte, const std::string&, const int&, const int&
             );
 
             Attribut getAttribut() const;
