@@ -44,11 +44,15 @@ namespace Partie3 {
 		void Carte::setValeur(const std::string& valeur) {
 			this->_valeur = valeur;
 		}
+
+		/*static unsigned GetNbCreation() {
+			return this->NbCreation;
+		};*/
 	
 		std::ostream& operator<<(std::ostream& flux, const Carte& carte)
 		{
 			//Affichage des attributs
-			flux << "Carte: " << carte._valeur << " de " << static_cast<int>(carte._couleur);
+			flux << "Carte: " << carte._valeur << " de " << NomCouleur[static_cast<int>(carte._couleur)];
 			return flux;
 		}
 	}
@@ -63,7 +67,7 @@ namespace Partie3 {
 		cout << c2 << endl;
 
 		c2.setType(JeuDeCarte2::Couleur::TREFLE);
-		c2.setValeur("Queen");
+		c2.setValeur("REINE");
 		cout << c2 << endl;
 
 		if (c1 != c2) {

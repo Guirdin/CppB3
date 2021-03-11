@@ -6,13 +6,14 @@
 
 namespace Partie3 {
 
+    inline static const std::array<std::string, 4> NomCouleur = { "PIQUE", "COEUR", "CARREAU", "TREFLE" };
+
     inline namespace JeuDeCarte1 {
 
         class Carte
         {
         public:
             enum Couleur : unsigned short { PIQUE, COEUR, CARREAU, TREFLE };
-            static const std::array<std::string, 4> NomCouleur;
 
             Carte(Couleur, const std::string&); //constructeur
             Carte(Carte&); //constructeur - copie
@@ -53,15 +54,16 @@ namespace Partie3 {
         {
         public:
 
-            Carte(Couleur, const std::string&); //constructeur
-            Carte(Carte&); //constructeur - copie
+            //constructeur
+            Carte(Couleur, const std::string&); 
 
-            //-> pour heritage : virtual ~Carte();
-            virtual ~Carte(); // destructeur
+            //constructeur - copie
+            Carte(Carte&); 
+
+            //-> pour heritage : virtual ~Carte(); destructeur
+            virtual ~Carte(); 
 
             Carte& operator=(const Carte&);
-            //bool operator==(const Carte&) const {};
-            //bool operator!=(const Carte&) const {};
 
             inline bool operator==(const Carte& c) const {
                 std::cerr << "operator==" << std::endl;
@@ -76,8 +78,17 @@ namespace Partie3 {
                 return (!(this->operator==(c)));
             }
 
-            void setType(const Couleur); // propriété setter -> type
-            void setValeur(const std::string&);// propriété setter -> valeur
+            // propriété setter -> type
+            void setType(const Couleur);
+
+            // propriété setter -> valeur
+            void setValeur(const std::string&);
+            
+            // Attribut - Nombre de création
+            static unsigned NbCreation; 
+
+            // propriété getter -> Nombre de création
+            //static unsigned GetNbCreation(); 
 
             friend std::ostream& operator<<(std::ostream&, const Carte&);
 
@@ -104,7 +115,10 @@ namespace Partie3 {
                 WYRM, CYBERSE, BETE_DIVINE};
 
 
-            static std::array<std::string, 7> NomAttribut;
+            static const std::array<std::string, 6> NomTypeCarte;
+            static const std::array<std::string, 7> NomAttribut;
+            static const std::array<std::string, 24> NomType;
+
 
             //-> pour heritage : virtual void afficher() const
             virtual void afficher() const;
@@ -113,6 +127,9 @@ namespace Partie3 {
             Carte_Monstre(const std::string&, Attribut, const int&, const std::string&, Type, 
                 TypeCarte, const std::string&, const int&, const int&
             );
+
+            // destructeur
+            virtual ~Carte_Monstre(); 
 
             Attribut getAttribut() const;
             int getATK() const;

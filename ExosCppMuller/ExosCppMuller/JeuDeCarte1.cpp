@@ -8,7 +8,7 @@ namespace Partie3 {
 
 	inline namespace JeuDeCarte1 {
 
-		const std::array<std::string, 4> Carte::NomCouleur = { "PIQUE", "COEUR", "CARREAU", "TREFLE" };
+		//const std::array<std::string, 4> Carte::NomCouleur = { "PIQUE", "COEUR", "CARREAU", "TREFLE" };
 
 		//constructeur
 		Carte::Carte(Couleur couleur, const std::string& valeur)
@@ -41,7 +41,7 @@ namespace Partie3 {
 		// méthode d'affichage - affiche l'objet suivis par sa couleur et sa valeur
 		void Carte::afficher() const {
 			std::cout << std::endl <<  "Carte [ " << this << " ]" << std::endl;
-			std::cout << this->_valeur << " de " << this->_couleur << std::endl;
+			std::cout << this->_valeur << " de " << NomCouleur[this->_couleur] << std::endl;
 		}
 
 		// méthode d'affectation - copie et donne les propriétés de la carte passé en paramètre
@@ -59,7 +59,7 @@ namespace Partie3 {
 		JeuDeCarte1::Carte c2(c1);
 		c2.afficher();
 		c2.setType(JeuDeCarte1::Carte::TREFLE);
-		c2.setValeur("Queen");
+		c2.setValeur("REINE");
 		c2.afficher();
 		JeuDeCarte1::Carte c3(JeuDeCarte1::Carte::PIQUE, "2");
 		c2.affecter(c3);
@@ -70,7 +70,7 @@ namespace Partie3 {
 			cout << "C'est bon" << endl;
 		}
 		else {
-			std::cerr << endl << "Une erreur est survenue: Les cartes ne sont pas égales" << endl;
+			std::cerr << endl << "Une erreur est survenue: Les cartes ne sont pas egales" << endl;
 			c1.afficher();
 			c2.afficher();
 		}
