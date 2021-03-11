@@ -11,13 +11,13 @@ namespace Partie3 {
         {
         public:
             enum Couleur : unsigned short { PIQUE, COEUR, CARREAU, TREFLE };
-            //static std::array<std::string, 4> NomCouleur;
+            //static const std::array<std::string, 4> NomCouleur;
 
             Carte(Couleur, const std::string&); //constructeur
             Carte(Carte&); //constructeur - copie
             ~Carte(); // destructeur
 
-            void setType(Couleur); // propriété setter -> type
+            void setType(const Couleur); // propriété setter -> type
             void setValeur(const std::string&);// propriété setter -> valeur
 
             //-> pour heritage : virtual void afficher() const
@@ -59,7 +59,7 @@ namespace Partie3 {
             //-> pour heritage : virtual ~Carte();
             virtual ~Carte(); // destructeur
 
-            Carte& operator=(const Carte&);
+            Carte& operator=(const Carte&) const;
             //bool operator==(const Carte&) const {};
             //bool operator!=(const Carte&) const {};
 
@@ -77,7 +77,7 @@ namespace Partie3 {
             }
 
 
-            void setType(Couleur); // propriété setter -> type
+            void setType(const Couleur); // propriété setter -> type
             void setValeur(const std::string&);// propriété setter -> valeur
 
             friend std::ostream& operator<<(std::ostream&, const Carte&);
@@ -104,17 +104,17 @@ namespace Partie3 {
             virtual std::string afficher() const;
 
             //constructeur
-            Carte_Monstre(Attribut, const int&, const int&, const std::string&,
-                const int&, const std::string&, const std::string&, const [2] std::string&);
+            Carte_Monstre(const Attribut, const int&, const int&, const std::string&,
+                const int&, const std::string&, const std::string&/*, const [2] std::string&*/);
 
-            Attribut getAttribut();
-            int getATK();
-            int getDEF();
-            std::string getDescription();
-            int getNiveau();
-            std::string getNomCarte();
-            std::string getNumeroCarte();
-            [2]std::string getType();
+            Attribut getAttribut() const;
+            int getATK() const;
+            int getDEF() const;
+            std::string getDescription() const;
+            int getNiveau() const;
+            std::string getNomCarte() const;
+            std::string getNumeroCarte() const;
+            //[2]std::string getType() const;
 
         private:
 
@@ -125,7 +125,7 @@ namespace Partie3 {
             int a_niveau;
             std::string a_nomCarte;
             std::string a_numeroCarte;
-            std::string a_type[2];
+            //std::string a_type[2];
         };
     }
 

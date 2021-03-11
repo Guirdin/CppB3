@@ -36,7 +36,7 @@ namespace Partie3 {
 		}
 
 		// setter type - enumération Couleur
-		void Carte::setType(Couleur couleur) {
+		void Carte::setType(const Couleur couleur) {
 			this->_couleur = couleur;
 		}
 

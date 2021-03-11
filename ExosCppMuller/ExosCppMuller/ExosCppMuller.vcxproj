@@ -156,6 +156,7 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Maxfact.cpp" />
     <ClCompile Include="NombreMystere.cpp" />
+    <ClCompile Include="Partie3.cpp" />
     <ClCompile Include="Personne.cpp" />
     <ClCompile Include="ReferencePointeurA.cpp" />
     <ClCompile Include="ReferencePointeurB.cpp" />

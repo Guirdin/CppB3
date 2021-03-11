@@ -8,7 +8,7 @@ namespace Partie3 {
 
 	inline namespace JeuDeCarte1 {
 
-		//std::array<std::string, 4> Carte::NomCouleur = { "PIQUE", "COEUR", "CARREAU", "TREFLE" };
+		//const std::array<std::string, 4> Carte::NomCouleur = { "PIQUE", "COEUR", "CARREAU", "TREFLE" };
 
 		//constructeur
 		Carte::Carte(Couleur couleur, const std::string& valeur)
@@ -29,7 +29,7 @@ namespace Partie3 {
 		}
 
 		// setter type - copie et donne la couleur de la carte passé en paramètre
-		void Carte::setType(Couleur couleur) {
+		void Carte::setType(const Couleur couleur) {
 			this->_couleur = couleur;
 		}
 
