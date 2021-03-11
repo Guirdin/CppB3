@@ -11,7 +11,7 @@ namespace Partie3 {
         {
         public:
             enum Couleur : unsigned short { PIQUE, COEUR, CARREAU, TREFLE };
-            //static const std::array<std::string, 4> NomCouleur;
+            //static std::array<std::string, 4> NomCouleur;
 
             Carte(Couleur, const std::string&); //constructeur
             Carte(Carte&); //constructeur - copie
@@ -59,23 +59,22 @@ namespace Partie3 {
             //-> pour heritage : virtual ~Carte();
             virtual ~Carte(); // destructeur
 
-            Carte& operator=(const Carte&) const;
+            Carte& operator=(const Carte&);
             //bool operator==(const Carte&) const {};
             //bool operator!=(const Carte&) const {};
 
-           bool operator==(const Carte& c) const {
+            inline bool operator==(const Carte& c) const {
                 std::cerr << "operator==" << std::endl;
                 if (&c == this) return true;
                 return (this->_couleur == c._couleur &&
                     this->_valeur == c._valeur);
             }
 
-            bool operator!=(const Carte& c) const {
+            inline bool operator!=(const Carte& c) const {
                 std::cerr << "operator!=" << std::endl;
                 if (&c == this) return false;
                 return (!(this->operator==(c)));
             }
-
 
             void setType(const Couleur); // propriété setter -> type
             void setValeur(const std::string&);// propriété setter -> valeur
@@ -90,7 +89,7 @@ namespace Partie3 {
         };
     }
 
-    inline namespace JeuDeCarteMonstreYUGIOH {
+    inline namespace CarteMonstreYUGIOH {
 
         //enum class Couleur : unsigned short { PIQUE, COEUR, CARREAU, TREFLE };
 
@@ -104,7 +103,7 @@ namespace Partie3 {
             virtual std::string afficher() const;
 
             //constructeur
-            Carte_Monstre(const Attribut, const int&, const int&, const std::string&,
+            Carte_Monstre(Attribut, const int&, const int&, const std::string&,
                 const int&, const std::string&, const std::string&/*, const [2] std::string&*/);
 
             Attribut getAttribut() const;
@@ -134,7 +133,7 @@ namespace Partie3 {
         
         static void JeuDeCarte1();
         static void JeuDeCarte2();
-        static void JeuDeCarteMonstreYUGIOH();
+        static void CarteMonstreYUGIOH();
     };
 }
 #endif // PARTIE3_H

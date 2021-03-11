@@ -6,7 +6,7 @@ using std::endl;
 
 namespace Partie3 {
 
-	inline namespace JeuDeCarteMonstreYUGIOH {
+	inline namespace CarteMonstreYUGIOH {
 
 		//constructeur
 		Carte_Monstre::Carte_Monstre(Attribut attribut, const int& ATK, const int& DEF,
@@ -45,13 +45,27 @@ namespace Partie3 {
 			return this->a_numeroCarte;
 		};
 		/*[2] std::string Carte_Monstre::getType() const{
-
+			return this->a_type;
 		};*/
+
+		std::string Carte_Monstre::afficher() const {
+			std::cout << std::endl << "Carte [ " << a_nomCarte << " ]" << std::endl;
+			std::cout << "Attribut: " << this->a_attribut << std::endl;
+			std::cout << "Attaque: " << this->a_ATK << std::endl;
+			std::cout << "Défense: " << this->a_DEF << std::endl;
+			std::cout << "Description: " << this->a_description << std::endl;
+			std::cout << "Niveau: " << this->a_niveau << std::endl;
+			std::cout << "Numéro: " << this->a_numeroCarte << std::endl;
+			//std::cout << "Type: " << this->a_type << std::endl;
+		}
 	}
 
-	void TP::JeuDeCarteMonstreYUGIOH() {
+	void TP::CarteMonstreYUGIOH() {
 		std::cout << "\nBienvenue sur le TP 3.3 - Jeu de Carte YU-GI-OH \n";
 
+		JeuDeCarte1::Carte c1(JeuDeCarte1::Carte::PIQUE, "As");
+		CarteMonstreYUGIOH::Carte_Monstre cm1(CarteMonstreYUGIOH::Carte_Monstre::TENEBRE, 1400,
+			);
 		
 	}
 }
