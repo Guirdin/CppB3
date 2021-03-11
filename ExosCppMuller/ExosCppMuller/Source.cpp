@@ -23,6 +23,7 @@ map<string, function<void() >> funcs = {
     { "JeuDeCarte1", Partie3::TP::JeuDeCarte1 },
     { "JeuDeCarte2", Partie3::TP::JeuDeCarte2 },
     { "CarteMonstreYUGIOH", Partie3::TP::CarteMonstreYUGIOH },
+    { "CarteMagiePiegeYUGIOH", Partie3::TP::CarteMagiePiegeYUGIOH },
 };
 
 auto restart(string fonction) -> void {

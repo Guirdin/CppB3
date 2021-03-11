@@ -89,5 +89,8 @@
     <ClCompile Include="Partie3.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="CarteMagiePiegeYUGIOH.cpp">
+      <Filter>Fichiers sources\Partie3</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

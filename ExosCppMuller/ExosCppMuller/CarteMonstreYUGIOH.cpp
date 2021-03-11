@@ -104,7 +104,7 @@ namespace Partie3 {
 	}
 
 	void TP::CarteMonstreYUGIOH() {
-		std::cout << "\nBienvenue sur le TP 3.3 - Jeu de Carte YU-GI-OH \n";
+		std::cout << "\nBienvenue sur le TP 3.3 - Jeu de Carte Monstre YU-GI-OH \n";
 
 		CarteMonstreYUGIOH::Carte_Monstre cm1("Canard Supersonique", Carte_Monstre::VENT,
 			3, "SBAD-FR036", Carte_Monstre::BETE_AILEE, Carte_Monstre::NORMAL,

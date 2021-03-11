@@ -156,12 +156,17 @@ namespace Partie3 {
         };
     }
 
+    inline namespace CarteMagiePiegeYUGIOH {
+
+    }
+
     class TP {
     public:
         
         static void JeuDeCarte1();
         static void JeuDeCarte2();
         static void CarteMonstreYUGIOH();
+        static void CarteMagiePiegeYUGIOH();
     };
 }
 #endif // PARTIE3_H

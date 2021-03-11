@@ -27,7 +27,8 @@ auto main()-> int
 	cout << "\nExercices Partie 3:";
 	cout << "\nPour le TP 3.1 - Jeu de carte 1 tapez (14)";
 	cout << "\nPour le TP 3.2 - Jeu de carte 2 tapez (15)";
-	cout << "\nPour le TP 3.3 - Jeu de carte Monstre YUGIOH tapez (16)\n";
+	cout << "\nPour le TP 3.3 - Jeu de carte Monstre YUGIOH tapez (16)";
+	cout << "\nPour le TP 3.4 - Jeu de carte Magie/Piege YUGIOH tapez (17)\n";
 
 	cout << "\nPour Quitter tapez (0)\n";
 
@@ -71,6 +72,8 @@ auto main()-> int
 		case 15: restart("JeuDeCarte2"); break; // TP 3.2
 
 		case 16: restart("CarteMonstreYUGIOH"); break; // TP 3.3
+
+		case 17: restart("CarteMagiePiegeYUGIOH"); break; // TP 3.4
 
 	}
 	return 0;
