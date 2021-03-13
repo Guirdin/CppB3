@@ -30,8 +30,8 @@ namespace Partie3 {
             // propriété setter -> valeur
             void setValeur(const std::string&);
 
-            //-> pour heritage : virtual void afficher() const
-            virtual void afficher() const;
+            //-> méthode - afficher
+            void afficher() const;
 
             inline bool equal(Carte& carte) {
                 if (this->_couleur == carte._couleur)
@@ -68,8 +68,8 @@ namespace Partie3 {
             // constructeur - copie
             Carte(Carte&); 
 
-            //-> pour heritage : virtual ~Carte(); destructeur
-            virtual ~Carte(); 
+            // destructeur
+            ~Carte(); 
 
             Carte& operator=(const Carte&);
 
@@ -110,14 +110,30 @@ namespace Partie3 {
 
     inline namespace CarteMonstreYUGIOH {
 
-        class Carte_Monstre
+        // Interface class
+        //class ICarte_YUGIOH
+        //{
+        //public:
+        //    virtual ~ICarte_YUGIOH() = 0 {};
+
+        //    virtual void afficher() const = 0;
+        //    virtual std::string getDescription() const = 0;
+        //    //virtual std::string getNomClasse() const = 0;
+        //    virtual std::string getNumeroCarte() const = 0;
+        //    virtual Carte_Monstre::TypeCarte getTypeCarte() const = 0;
+        //    virtual Carte_Monstre::TypeMonstre getTypeMonstre() const = 0;
+        //    virtual std::string getType() const = 0;
+
+        //};
+
+        class Carte_Monstre /*: virtual public ICarte_YUGIOH*/
         {
         public:
             enum TypeCarte : unsigned short { NORMAL, EFFET, RITUEL, FUSION, SYNCHRO, XYZ };
 
             enum Attribut : unsigned short { TENEBRE, TERRE, FEU, LUMIERE, EAU, VENT, DIVIN };
 
-            enum Type : unsigned short { DRAGON, ZOMBIE, DEMON, PYRO, SERPENT_DE_MER, ROCHER,
+            enum TypeMonstre : unsigned short { DRAGON, ZOMBIE, DEMON, PYRO, SERPENT_DE_MER, ROCHER,
                 MACHINE, POISSON, DINOSAURE, INSECTE, BETE, BETE_GUERRIER, PLANTE,
                 AQUA, GUERRIER, BETE_AILEE, ELFE, MAGICIEN,TONNERRE, REPTILE, PSYCHIQUE,
                 WYRM, CYBERSE, BETE_DIVINE};
@@ -125,19 +141,18 @@ namespace Partie3 {
 
             static const std::array<std::string, 6> NomTypeCarte;
             static const std::array<std::string, 7> NomAttribut;
-            static const std::array<std::string, 24> NomType;
+            static const std::array<std::string, 24> NomTypeMonstre;
 
-
-            //-> pour heritage : virtual void afficher() const
-            virtual void afficher() const;
+            //-> méthode - afficher
+            void afficher() const;
 
             // constructeur
-            Carte_Monstre(const std::string&, Attribut, const int&, const std::string&, Type, 
+            Carte_Monstre(const std::string&, Attribut, const int&, const std::string&, TypeMonstre,
                 TypeCarte, const std::string&, const int&, const int&
             );
 
             // destructeur
-            virtual ~Carte_Monstre(); 
+            ~Carte_Monstre(); 
 
             Attribut getAttribut() const;
             int getATK() const;
@@ -147,7 +162,7 @@ namespace Partie3 {
             std::string getNomCarte() const;
             std::string getNumeroCarte() const;
             TypeCarte getTypeCarte() const;
-            Type getType() const;
+            TypeMonstre getTypeMonstre() const;
 
         private:
 
@@ -159,49 +174,76 @@ namespace Partie3 {
             std::string a_nomCarte;
             std::string a_numeroCarte;
             TypeCarte a_typeCarte;
-            Type a_type;
+            TypeMonstre a_typeMonstre;
 
         };
     }
 
     inline namespace CarteMagiePiegeYUGIOH {
 
-        class Carte_MagiePiege abstract
+        // Class abstraite
+        class Carte_MagiePiege /*: virtual public ICarte_YUGIOH*/
         {
         public:
 
             enum Icone : unsigned short { NORMAL, TERRAIN, EQUIPEMENT, 
                 CONTINUE, JEU_RAPIDE, RITUELLE, CONTRE_PIEGE };
 
-            class Carte_Magie {
-            public:
+            //-> pour heritage : virtual void afficher() const
+            virtual void afficher() = 0; //méthode virtuelle pure
 
-                // constructeur
-                Carte_Magie();
-
-                //-> pour heritage : virtual void afficher() const
-                virtual void afficher() const;
-            };
-
-            class Carte_Piege {
-            public:
-
-                // constructeur
-                Carte_Piege();
-
-                //-> pour heritage : virtual void afficher() const
-                virtual void afficher() const;
-            };
-
-            std::string getDescriptionCarte() const;
-            std::string getNomCarte() const;
-            std::string getNumeroCarte() const;
+            // getter virtuelle pure
+            virtual std::string getNomCarte() const = 0;
+            virtual std::string getType() const = 0;
+            virtual Icone getIcone() const = 0;
+            virtual std::string getDescriptionCarte() const = 0;
+            virtual std::string getNumeroCarte() const = 0;
 
         private:
 
-            std::string a_descriptionCarte;
             std::string a_nomCarte;
+            std::string a_type;
+            Icone a_icone;
+            std::string a_descriptionCarte;
             std::string a_numeroCarte;
+
+        };
+
+        class Carte_Magie : public Carte_MagiePiege
+        {
+        public:
+
+            // constructeur
+            Carte_Magie(const std::string&, const std::string&, Icone,
+                const std::string&, const std::string&);
+
+            // destructeur
+            ~Carte_Magie();
+
+            //-> pour heritage : virtual void afficher() const
+            virtual void afficher() const;
+
+            // getter - Type
+            virtual std::string getType() const;
+
+        };
+
+        class Carte_Piege : public Carte_MagiePiege
+        {
+        public:
+
+            // constructeur
+            Carte_Piege(const std::string&, const std::string&, Icone,
+                const std::string&, const std::string&);
+
+            // destructeur
+            ~Carte_Piege();
+
+            //-> pour heritage : virtual void afficher() const
+            virtual void afficher() const;
+
+            // getter - Type
+            virtual std::string getType() const;
 
         };
     }

@@ -16,7 +16,7 @@ namespace Partie3 {
 			"TENEBRE", "TERRE", "FEU", "LUMIERE", "EAU", "VENT", "DIVIN" 
 		};
 
-		const std::array<std::string, 24> Carte_Monstre::NomType = {
+		const std::array<std::string, 24> Carte_Monstre::NomTypeMonstre = {
 			"DRAGON", "ZOMBIE", "DEMON", "PYRO", "SERPENT_DE_MER", "ROCHER",
 			"MACHINE", "POISSON", "DINOSAURE", "INSECTE", "BETE", "BETE_GUERRIER", "PLANTE",
 			"AQUA", "GUERRIER", "BETE_AILEE", "ELFE", "MAGICIEN", "TONNERRE", "REPTILE", "PSYCHIQUE",
@@ -25,14 +25,14 @@ namespace Partie3 {
 
 		//constructeur
 		Carte_Monstre::Carte_Monstre(const std::string& nomCarte, Attribut attribut, 
-			const int& niveau, const std::string& numeroCarte ,Type type, TypeCarte typeCarte,
+			const int& niveau, const std::string& numeroCarte ,TypeMonstre typeMonstre, TypeCarte typeCarte,
 			const std::string& description, const int& ATK, const int& DEF)
 			:
 			a_nomCarte(nomCarte),
 			a_attribut(attribut),
 			a_niveau(niveau),
 			a_numeroCarte(numeroCarte),
-			a_type(type),
+			a_typeMonstre(typeMonstre),
 			a_typeCarte(typeCarte),
 			a_description(description),
 			a_ATK(ATK),
@@ -65,8 +65,8 @@ namespace Partie3 {
 		};
 
 		// getter - Type du Monstre
-		Carte_Monstre::Type Carte_Monstre::getType() const {
-			return this->a_type;
+		Carte_Monstre::TypeMonstre Carte_Monstre::getTypeMonstre() const {
+			return this->a_typeMonstre;
 		};
 
 		// getter - Type de la carte
@@ -95,7 +95,7 @@ namespace Partie3 {
 			std::cout << "Attribut: " << NomAttribut[this->a_attribut] << std::endl;
 			std::cout << "Niveau: " << this->a_niveau << std::endl;
 			std::cout << "Numero: " << this->a_numeroCarte << std::endl;
-			std::cout << "Type: [" << this->NomType[a_type] << "/" <<
+			std::cout << "Type: [" << this->NomTypeMonstre[a_typeMonstre] << "/" <<
 				this->NomTypeCarte[a_typeCarte] << "]" << std::endl;
 			std::cout << "Description: " << this->a_description << std::endl;
 			std::cout << "Attaque: " << this->a_ATK << std::endl;

@@ -8,6 +8,12 @@ namespace Partie3 {
 
 	inline namespace CarteMagiePiegeYUGIOH {
 
+		void Carte_MagiePiege::afficher() const {
+			std::cout << std::endl << "Carte: " << this->a_nomCarte << std::endl;
+			std::cout << "Description: " << this->a_descriptionCarte << std::endl;
+			std::cout << "Numero: " << this->a_numeroCarte << std::endl;
+		}
+
 	}
 
 	void TP::CarteMagiePiegeYUGIOH() {
