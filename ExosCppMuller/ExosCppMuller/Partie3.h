@@ -16,19 +16,19 @@ namespace Partie3 {
             enum Couleur : unsigned short { PIQUE, COEUR, CARREAU, TREFLE };
 
             // constructeur
-            Carte(Couleur, const std::string&);
+            Carte(Couleur couleur, const std::string& valeur);
 
             // constructeur - copie
-            Carte(Carte&);
+            Carte(Carte& crt);
 
             // destructeur
             ~Carte(); 
 
             // propriété setter -> type
-            void setType(const Couleur);
+            void setType(const Couleur couleur);
 
             // propriété setter -> valeur
-            void setValeur(const std::string&);
+            void setValeur(const std::string& valeur);
 
             //-> méthode - afficher
             void afficher() const;
@@ -44,7 +44,7 @@ namespace Partie3 {
                 }
             }
 
-            void affecter(Carte&);
+            void affecter(Carte& carte);
 
         private:
             // Attributs
@@ -63,10 +63,10 @@ namespace Partie3 {
         public:
 
             // constructeur
-            Carte(Couleur, const std::string&); 
+            Carte(Couleur couleur, const std::string& valeur); 
 
             // constructeur - copie
-            Carte(Carte&); 
+            Carte(Carte& crt); 
 
             // destructeur
             ~Carte(); 
@@ -87,10 +87,10 @@ namespace Partie3 {
             }
 
             // propriété setter -> type
-            void setType(const Couleur);
+            void setType(const Couleur couleur);
 
             // propriété setter -> valeur
-            void setValeur(const std::string&);
+            void setValeur(const std::string& valeur);
             
             // Attribut - Nombre de création
             static unsigned NbCreation; 
@@ -104,7 +104,6 @@ namespace Partie3 {
             // Attributs
             Couleur _couleur;
             std::string _valeur;
-
         };
     }
 
@@ -136,8 +135,7 @@ namespace Partie3 {
             enum TypeMonstre : unsigned short { DRAGON, ZOMBIE, DEMON, PYRO, SERPENT_DE_MER, ROCHER,
                 MACHINE, POISSON, DINOSAURE, INSECTE, BETE, BETE_GUERRIER, PLANTE,
                 AQUA, GUERRIER, BETE_AILEE, ELFE, MAGICIEN,TONNERRE, REPTILE, PSYCHIQUE,
-                WYRM, CYBERSE, BETE_DIVINE};
-
+                WYRM, CYBERSE, BETE_DIVINE };
 
             static const std::array<std::string, 6> NomTypeCarte;
             static const std::array<std::string, 7> NomAttribut;
@@ -147,35 +145,36 @@ namespace Partie3 {
             void afficher() const;
 
             // constructeur
-            Carte_Monstre(const std::string&, Attribut, const int&, const std::string&, TypeMonstre,
-                TypeCarte, const std::string&, const int&, const int&
-            );
+            Carte_Monstre(const std::string& nomCarte, Attribut attribut, const int& niveau,
+                const std::string& numeroCarte, TypeMonstre typeMonstre, TypeCarte typeCarte,
+                const std::string& description, const int& ATK, const int& DEF);
 
             // destructeur
             ~Carte_Monstre(); 
 
+            // getter
+            std::string getNomCarte() const;
             Attribut getAttribut() const;
+            int getNiveau() const;
+            std::string getNumeroCarte() const;
+            TypeMonstre getTypeMonstre() const;
+            TypeCarte getTypeCarte() const;
+            std::string getDescription() const;
             int getATK() const;
             int getDEF() const;
-            std::string getDescription() const;
-            int getNiveau() const;
-            std::string getNomCarte() const;
-            std::string getNumeroCarte() const;
-            TypeCarte getTypeCarte() const;
-            TypeMonstre getTypeMonstre() const;
 
         private:
 
+            // attributs de class
+            std::string a_nomCarte;
             Attribut a_attribut;
+            int a_niveau;
+            std::string a_numeroCarte;
+            TypeMonstre a_typeMonstre;
+            TypeCarte a_typeCarte;
+            std::string a_description;
             int a_ATK;
             int a_DEF;
-            std::string a_description;
-            int a_niveau;
-            std::string a_nomCarte;
-            std::string a_numeroCarte;
-            TypeCarte a_typeCarte;
-            TypeMonstre a_typeMonstre;
-
         };
     }
 
@@ -189,17 +188,26 @@ namespace Partie3 {
             enum Icone : unsigned short { NORMAL, TERRAIN, EQUIPEMENT, 
                 CONTINUE, JEU_RAPIDE, RITUELLE, CONTRE_PIEGE };
 
-            //-> pour heritage : virtual void afficher() const
-            virtual void afficher() = 0; //méthode virtuelle pure
+            static const std::array<std::string, 7> NomIcone;
 
-            // getter virtuelle pure
-            virtual std::string getNomCarte() const = 0;
-            virtual std::string getType() const = 0;
-            virtual Icone getIcone() const = 0;
-            virtual std::string getDescriptionCarte() const = 0;
-            virtual std::string getNumeroCarte() const = 0;
+            // constructeur
+            Carte_MagiePiege(const std::string& nomCarte, const std::string& type, Icone icone,
+                const std::string& a_descriptionCarte, const std::string& numeroCarte);
 
-        private:
+            // destructeur
+            ~Carte_MagiePiege();
+
+            //méthode virtuelle - pour l'héritage
+            virtual void afficher() const;
+
+            // getter virtuelle - pour l'héritage
+            virtual std::string getNomCarte() const;
+            virtual std::string getType() const;
+            virtual Icone getIcone() const;
+            virtual std::string getDescriptionCarte() const;
+            virtual std::string getNumeroCarte() const;
+
+        protected:
 
             std::string a_nomCarte;
             std::string a_type;
@@ -214,17 +222,17 @@ namespace Partie3 {
         public:
 
             // constructeur
-            Carte_Magie(const std::string&, const std::string&, Icone,
-                const std::string&, const std::string&);
+            Carte_Magie(const std::string& nomCarte, const std::string& type, Icone icone,
+                const std::string& descriptionCarte, const std::string& numeroCarte);
 
             // destructeur
             ~Carte_Magie();
 
             //-> pour heritage : virtual void afficher() const
-            virtual void afficher() const;
+            void afficher() const;
 
             // getter - Type
-            virtual std::string getType() const;
+            std::string getType() const;
 
         };
 
@@ -233,17 +241,17 @@ namespace Partie3 {
         public:
 
             // constructeur
-            Carte_Piege(const std::string&, const std::string&, Icone,
-                const std::string&, const std::string&);
+            Carte_Piege(const std::string& nomCarte, const std::string& type, Icone icone,
+                const std::string& descriptionCarte, const std::string& numeroCarte);
 
             // destructeur
             ~Carte_Piege();
 
             //-> pour heritage : virtual void afficher() const
-            virtual void afficher() const;
+            void afficher() const;
 
             // getter - Type
-            virtual std::string getType() const;
+            std::string getType() const;
 
         };
     }

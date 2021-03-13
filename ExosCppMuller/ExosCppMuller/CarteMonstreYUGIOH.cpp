@@ -65,41 +65,41 @@ namespace Partie3 {
 		};
 
 		// getter - Type du Monstre
-		Carte_Monstre::TypeMonstre Carte_Monstre::getTypeMonstre() const {
+		Carte_Monstre::TypeMonstre Carte_Monstre::getTypeMonstre() const{
 			return this->a_typeMonstre;
 		};
 
 		// getter - Type de la carte
-		Carte_Monstre::TypeCarte Carte_Monstre::getTypeCarte() const {
+		Carte_Monstre::TypeCarte Carte_Monstre::getTypeCarte() const{
 			return this->a_typeCarte;
 		};
 
 		// getter - Description de la carte
-		std::string Carte_Monstre::getDescription()  const{
+		std::string Carte_Monstre::getDescription() const{
 			return this->a_description;
 		};
 
 		// getter - Point d'attaque de la carte
-		int Carte_Monstre::getATK()  const{
+		int Carte_Monstre::getATK() const{
 			return this->a_ATK;
 		};
 
 		// getter - Point de défense de la carte
-		int Carte_Monstre::getDEF()  const{
+		int Carte_Monstre::getDEF() const {
 			return this->a_DEF;
 		};
 
 		// Méthode d'affichage
 		void Carte_Monstre::afficher() const {
-			std::cout << std::endl << "Carte: " << this->a_nomCarte << std::endl;
-			std::cout << "Attribut: " << NomAttribut[this->a_attribut] << std::endl;
-			std::cout << "Niveau: " << this->a_niveau << std::endl;
-			std::cout << "Numero: " << this->a_numeroCarte << std::endl;
-			std::cout << "Type: [" << this->NomTypeMonstre[a_typeMonstre] << "/" <<
-				this->NomTypeCarte[a_typeCarte] << "]" << std::endl;
-			std::cout << "Description: " << this->a_description << std::endl;
-			std::cout << "Attaque: " << this->a_ATK << std::endl;
-			std::cout << "Defense: " << this->a_DEF << std::endl;
+			std::cout << std::endl << "Carte: " << getNomCarte() << std::endl;
+			std::cout << "Attribut: " << NomAttribut[getAttribut()] << std::endl;
+			std::cout << "Niveau: " << getNiveau() << std::endl;
+			std::cout << "Numero: " << getNumeroCarte() << std::endl;
+			std::cout << "Type: [" << NomTypeMonstre[getTypeMonstre()] << "/" <<
+				NomTypeCarte[getTypeCarte()] << "]" << std::endl;
+			std::cout << "Description: " << getDescription() << std::endl;
+			std::cout << "Attaque: " << getATK() << std::endl;
+			std::cout << "Defense: " << getDEF() << std::endl;
 		}
 	}
 
@@ -112,6 +112,7 @@ namespace Partie3 {
 			"Il lui arrive de se tromper dans ses foulees et de perdre le controle.\n", 
 			1700, 700 );
 
+		std::cout << std::endl << "Affiche la carte" << std::endl;
 		cm1.afficher();
 		
 	}
