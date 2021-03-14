@@ -6,7 +6,7 @@ using std::endl;
 
 namespace Partie3 {
 
-	inline namespace JeuDeCarte1 {
+	namespace JeuDeCarte1 {
 
 		//const std::array<std::string, 4> Carte::NomCouleur = { "PIQUE", "COEUR", "CARREAU", "TREFLE" };
 

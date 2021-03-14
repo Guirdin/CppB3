@@ -8,7 +8,7 @@ namespace Partie3 {
 
     inline static const std::array<std::string, 4> NomCouleur = { "PIQUE", "COEUR", "CARREAU", "TREFLE" };
 
-    inline namespace JeuDeCarte1 {
+    namespace JeuDeCarte1 {
 
         class Carte
         {
@@ -54,7 +54,7 @@ namespace Partie3 {
         };
     }
 
-    inline namespace JeuDeCarte2 {
+    namespace JeuDeCarte2 {
         
         enum class Couleur : unsigned short { PIQUE, COEUR, CARREAU, TREFLE };
 
@@ -107,7 +107,7 @@ namespace Partie3 {
         };
     }
 
-    inline namespace CarteMonstreYUGIOH {
+    namespace CarteMonstreYUGIOH {
 
         // Interface class
         //class ICarte_YUGIOH
@@ -178,7 +178,7 @@ namespace Partie3 {
         };
     }
 
-    inline namespace CarteMagiePiegeYUGIOH {
+    namespace CarteMagiePiegeYUGIOH {
 
         // Class abstraite
         class Carte_MagiePiege /*: virtual public ICarte_YUGIOH*/
@@ -197,12 +197,12 @@ namespace Partie3 {
             // destructeur
             virtual ~Carte_MagiePiege();
 
-            //méthode virtuelle - pour l'héritage
-            virtual void afficher() const;
+            //méthode virtuelle pur - pour l'héritage
+            virtual void afficher() const = 0;
 
             // getter virtuelle - pour l'héritage
             virtual std::string getNomCarte() const;
-            virtual std::string getType() const;
+            virtual std::string getType() const = 0; // getter virtuelle pur
             virtual Icone getIcone() const;
             virtual std::string getDescriptionCarte() const;
             virtual std::string getNumeroCarte() const;

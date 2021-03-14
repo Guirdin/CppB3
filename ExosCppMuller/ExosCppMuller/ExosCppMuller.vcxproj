@@ -145,6 +145,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CarteMagiePiegeYUGIOH.cpp" />
+    <ClCompile Include="Carte_YUGIOH.cpp" />
     <ClCompile Include="DeveloppementLimites.cpp" />
     <ClCompile Include="Fibonacci.cpp" />
     <ClCompile Include="Integrale.cpp" />
@@ -157,7 +158,6 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Maxfact.cpp" />
     <ClCompile Include="NombreMystere.cpp" />
-    <ClCompile Include="Partie3.cpp" />
     <ClCompile Include="Personne.cpp" />
     <ClCompile Include="ReferencePointeurA.cpp" />
     <ClCompile Include="ReferencePointeurB.cpp" />

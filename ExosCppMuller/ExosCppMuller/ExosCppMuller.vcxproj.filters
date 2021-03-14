@@ -86,10 +86,10 @@
     <ClCompile Include="CarteMonstreYUGIOH.cpp">
       <Filter>Fichiers sources\Partie3</Filter>
     </ClCompile>
-    <ClCompile Include="Partie3.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
     <ClCompile Include="CarteMagiePiegeYUGIOH.cpp">
+      <Filter>Fichiers sources\Partie3</Filter>
+    </ClCompile>
+    <ClCompile Include="Carte_YUGIOH.cpp">
       <Filter>Fichiers sources\Partie3</Filter>
     </ClCompile>
   </ItemGroup>

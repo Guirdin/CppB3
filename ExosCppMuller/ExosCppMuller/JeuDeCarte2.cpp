@@ -6,7 +6,7 @@ using std::endl;
 
 namespace Partie3 {
 
-	inline namespace JeuDeCarte2 {
+	 namespace JeuDeCarte2 {
 
 		//constructeur
 		Carte::Carte(Couleur couleur, const std::string& valeur)

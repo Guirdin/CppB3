@@ -6,7 +6,7 @@ using std::endl;
 
 namespace Partie3 {
 
-	inline namespace CarteMonstreYUGIOH {
+	 namespace CarteMonstreYUGIOH {
 
 		const std::array<std::string, 6> Carte_Monstre::NomTypeCarte = { 
 			"NORMAL", "EFFET", "RITUEL", "FUSION", "SYNCHRO", "XYZ" 
@@ -106,8 +106,8 @@ namespace Partie3 {
 	void TP::CarteMonstreYUGIOH() {
 		std::cout << "\nBienvenue sur le TP 3.3 - Jeu de Carte Monstre YU-GI-OH \n";
 
-		CarteMonstreYUGIOH::Carte_Monstre cm1("Canard Supersonique", Carte_Monstre::VENT,
-			3, "SBAD-FR036", Carte_Monstre::BETE_AILEE, Carte_Monstre::NORMAL,
+		CarteMonstreYUGIOH::Carte_Monstre cm1("Canard Supersonique", CarteMonstreYUGIOH::Carte_Monstre::VENT,
+			3, "SBAD-FR036", CarteMonstreYUGIOH::Carte_Monstre::BETE_AILEE, CarteMonstreYUGIOH::Carte_Monstre::NORMAL,
 			"Un canard qui peut se deplacer a des vitesses transsoniques.\n"
 			"Il lui arrive de se tromper dans ses foulees et de perdre le controle.\n", 
 			1700, 700 );
