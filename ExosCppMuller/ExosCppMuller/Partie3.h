@@ -195,7 +195,7 @@ namespace Partie3 {
                 const std::string& a_descriptionCarte, const std::string& numeroCarte);
 
             // destructeur
-            virtual ~Carte_MagiePiege();
+            virtual ~Carte_MagiePiege() {};
 
             //méthode virtuelle pur - pour l'héritage
             virtual void afficher() const = 0;

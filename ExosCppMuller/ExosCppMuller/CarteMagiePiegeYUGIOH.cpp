@@ -36,11 +36,6 @@ namespace Partie3 {
 			:
 			Carte_MagiePiege(nomCarte, type, icone, descriptionCarte, numeroCarte) {};
 
-		// destructeur - Carte_MagiePiege
-		Carte_MagiePiege::~Carte_MagiePiege() {
-			std::cout << std::endl << __func__ << std::endl;
-		};
-
 		// destructeur - Carte_Magie
 		Carte_Magie::~Carte_Magie() {
 			std::cout << std::endl << __func__ << std::endl;
