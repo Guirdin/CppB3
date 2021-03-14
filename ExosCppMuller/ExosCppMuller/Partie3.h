@@ -191,26 +191,28 @@ namespace Partie3 {
             static const std::array<std::string, 7> NomIcone;
 
             // constructeur
-            Carte_MagiePiege(const std::string& nomCarte, const std::string& type, Icone icone,
+            Carte_MagiePiege(const std::string& nomCarte, Icone icone,
                 const std::string& a_descriptionCarte, const std::string& numeroCarte);
 
             // destructeur
             virtual ~Carte_MagiePiege() {};
 
-            //méthode virtuelle pur - pour l'héritage
-            virtual void afficher() const = 0;
-
+            // méthode virtuelle - pour l'héritage
+            // les attributs des classes filles étant identique - Pas de virtuelle pur
+            virtual void afficher() const;
+            
             // getter virtuelle - pour l'héritage
             virtual std::string getNomCarte() const;
-            virtual std::string getType() const = 0; // getter virtuelle pur
             virtual Icone getIcone() const;
             virtual std::string getDescriptionCarte() const;
             virtual std::string getNumeroCarte() const;
 
+            // getter virtuelle pur
+            virtual std::string getType() const = 0; 
+
         protected:
 
             std::string a_nomCarte;
-            std::string a_type;
             Icone a_icone;
             std::string a_descriptionCarte;
             std::string a_numeroCarte;
@@ -222,14 +224,11 @@ namespace Partie3 {
         public:
 
             // constructeur
-            Carte_Magie(const std::string& nomCarte, const std::string& type, Icone icone,
+            Carte_Magie(const std::string& nomCarte, Icone icone,
                 const std::string& descriptionCarte, const std::string& numeroCarte);
 
             // destructeur
             ~Carte_Magie();
-
-            //-> pour heritage : virtual void afficher() const
-            void afficher() const;
 
             // getter - Type
             std::string getType() const;
@@ -241,14 +240,11 @@ namespace Partie3 {
         public:
 
             // constructeur
-            Carte_Piege(const std::string& nomCarte, const std::string& type, Icone icone,
+            Carte_Piege(const std::string& nomCarte, Icone icone,
                 const std::string& descriptionCarte, const std::string& numeroCarte);
 
             // destructeur
             ~Carte_Piege();
-
-            //-> pour heritage : virtual void afficher() const
-            void afficher() const;
 
             // getter - Type
             std::string getType() const;
