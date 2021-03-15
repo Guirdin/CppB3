@@ -107,151 +107,164 @@ namespace Partie3 {
         };
     }
 
-    namespace CarteMonstreYUGIOH {
+    //namespace Carte_YUGIOH {
 
-        // Interface class
-        //class ICarte_YUGIOH
-        //{
-        //public:
-        //    virtual ~ICarte_YUGIOH() = 0 {};
+    //    //Interface class
+    //    class ICarte_YUGIOH
+    //    {
+    //    public:
+    //        ICarte_YUGIOH(const std::string& nomCarte,
+    //            const std::string& description, const std::string& numeroCarte);
 
-        //    virtual void afficher() const = 0;
-        //    virtual std::string getDescription() const = 0;
-        //    //virtual std::string getNomClasse() const = 0;
-        //    virtual std::string getNumeroCarte() const = 0;
-        //    virtual Carte_Monstre::TypeCarte getTypeCarte() const = 0;
-        //    virtual Carte_Monstre::TypeMonstre getTypeMonstre() const = 0;
-        //    virtual std::string getType() const = 0;
+    //        virtual void afficher() const;
+    //        virtual std::string getNomCarte() const;
+    //        virtual std::string getType() const = 0;
+    //        virtual std::string getNumeroCarte() const;
+    //        virtual std::string getDescription() const;
 
-        //};
+    //    protected:
 
-        class Carte_Monstre /*: virtual public ICarte_YUGIOH*/
-        {
-        public:
-            enum TypeCarte : unsigned short { NORMAL, EFFET, RITUEL, FUSION, SYNCHRO, XYZ };
+    //        std::string a_nomCarte;
+    //        std::string a_description;
+    //        std::string a_numeroCarte;
 
-            enum Attribut : unsigned short { TENEBRE, TERRE, FEU, LUMIERE, EAU, VENT, DIVIN };
+    //    };
 
-            enum TypeMonstre : unsigned short { DRAGON, ZOMBIE, DEMON, PYRO, SERPENT_DE_MER, ROCHER,
-                MACHINE, POISSON, DINOSAURE, INSECTE, BETE, BETE_GUERRIER, PLANTE,
-                AQUA, GUERRIER, BETE_AILEE, ELFE, MAGICIEN,TONNERRE, REPTILE, PSYCHIQUE,
-                WYRM, CYBERSE, BETE_DIVINE };
+        inline namespace CarteMonstreYUGIOH {
 
-            static const std::array<std::string, 6> NomTypeCarte;
-            static const std::array<std::string, 7> NomAttribut;
-            static const std::array<std::string, 24> NomTypeMonstre;
+            class Carte_Monstre /*: virtual public ICarte_YUGIOH*/
+            {
+            public:
+                enum TypeCarte : unsigned short { NORMAL, EFFET, RITUEL, FUSION, SYNCHRO, XYZ };
 
-            //-> méthode - afficher
-            void afficher() const;
+                enum Attribut : unsigned short { TENEBRE, TERRE, FEU, LUMIERE, EAU, VENT, DIVIN };
 
-            // constructeur
-            Carte_Monstre(const std::string& nomCarte, Attribut attribut, const int& niveau,
-                const std::string& numeroCarte, TypeMonstre typeMonstre, TypeCarte typeCarte,
-                const std::string& description, const int& ATK, const int& DEF);
+                enum TypeMonstre : unsigned short {
+                    DRAGON, ZOMBIE, DEMON, PYRO, SERPENT_DE_MER, ROCHER,
+                    MACHINE, POISSON, DINOSAURE, INSECTE, BETE, BETE_GUERRIER, PLANTE,
+                    AQUA, GUERRIER, BETE_AILEE, ELFE, MAGICIEN, TONNERRE, REPTILE, PSYCHIQUE,
+                    WYRM, CYBERSE, BETE_DIVINE
+                };
 
-            // destructeur
-            ~Carte_Monstre(); 
+                static const std::array<std::string, 6> NomTypeCarte;
+                static const std::array<std::string, 7> NomAttribut;
+                static const std::array<std::string, 24> NomTypeMonstre;
 
-            // getter
-            std::string getNomCarte() const;
-            Attribut getAttribut() const;
-            int getNiveau() const;
-            std::string getNumeroCarte() const;
-            TypeMonstre getTypeMonstre() const;
-            TypeCarte getTypeCarte() const;
-            std::string getDescription() const;
-            int getATK() const;
-            int getDEF() const;
+                //-> méthode - afficher
+                void afficher() const;
 
-        private:
+                // constructeur
+                Carte_Monstre(const std::string& nomCarte, Attribut attribut, const int& niveau,
+                    const std::string& numeroCarte, TypeMonstre typeMonstre, TypeCarte typeCarte,
+                    const std::string& description, const int& ATK, const int& DEF);
 
-            // attributs de class
-            std::string a_nomCarte;
-            Attribut a_attribut;
-            int a_niveau;
-            std::string a_numeroCarte;
-            TypeMonstre a_typeMonstre;
-            TypeCarte a_typeCarte;
-            std::string a_description;
-            int a_ATK;
-            int a_DEF;
-        };
-    }
+                // destructeur
+                ~Carte_Monstre();
 
-    namespace CarteMagiePiegeYUGIOH {
+                // getter
+                std::string getNomCarte() const;
+                std::string getType() const;
+                Attribut getAttribut() const;
+                int getNiveau() const;
+                std::string getNumeroCarte() const;
+                TypeMonstre getTypeMonstre() const;
+                TypeCarte getTypeCarte() const;
+                std::string getDescription() const;
+                int getATK() const;
+                int getDEF() const;
 
-        // Class abstraite
-        class Carte_MagiePiege /*: virtual public ICarte_YUGIOH*/
-        {
-        public:
+            private:
 
-            enum Icone : unsigned short { NORMAL, TERRAIN, EQUIPEMENT, 
-                CONTINUE, JEU_RAPIDE, RITUELLE, CONTRE_PIEGE };
+                // attributs de class
+                std::string a_nomCarte;
+                Attribut a_attribut;
+                int a_niveau;
+                std::string a_numeroCarte;
+                TypeMonstre a_typeMonstre;
+                TypeCarte a_typeCarte;
+                std::string a_description;
+                int a_ATK;
+                int a_DEF;
+            };
+        }
+        
+        inline namespace CarteMagiePiegeYUGIOH {
 
-            static const std::array<std::string, 7> NomIcone;
+            // Class abstraite
+            class Carte_MagiePiege /*: virtual public ICarte_YUGIOH*/
+            {
+            public:
 
-            // constructeur
-            Carte_MagiePiege(const std::string& nomCarte, Icone icone,
-                const std::string& a_descriptionCarte, const std::string& numeroCarte);
+                enum Icone : unsigned short {
+                    NORMAL, TERRAIN, EQUIPEMENT,
+                    CONTINUE, JEU_RAPIDE, RITUELLE, CONTRE_PIEGE
+                };
 
-            // destructeur
-            virtual ~Carte_MagiePiege() {};
+                static const std::array<std::string, 7> NomIcone;
 
-            // méthode virtuelle - pour l'héritage
-            // les attributs des classes filles étant identique - Pas de virtuelle pur
-            virtual void afficher() const;
-            
-            // getter virtuelle - pour l'héritage
-            virtual std::string getNomCarte() const;
-            virtual Icone getIcone() const;
-            virtual std::string getDescriptionCarte() const;
-            virtual std::string getNumeroCarte() const;
+                // constructeur
+                Carte_MagiePiege(const std::string& nomCarte, Icone icone,
+                    const std::string& a_description, const std::string& numeroCarte);
 
-            // getter virtuelle pur
-            virtual std::string getType() const = 0; 
+                // destructeur
+                virtual ~Carte_MagiePiege() {};
 
-        protected:
+                // méthode virtuelle - pour l'héritage
+                // les attributs des classes filles étant identique - Pas de virtuelle pur
+                virtual void afficher() const;
 
-            std::string a_nomCarte;
-            Icone a_icone;
-            std::string a_descriptionCarte;
-            std::string a_numeroCarte;
+                // getter virtuelle - pour l'héritage
+                virtual std::string getNomCarte() const;
+                virtual Icone getIcone() const;
+                virtual std::string getDescription() const;
+                virtual std::string getNumeroCarte() const;
 
-        };
+                // getter virtuelle pur
+                virtual std::string getType() const = 0;
 
-        class Carte_Magie : public Carte_MagiePiege
-        {
-        public:
+            protected:
 
-            // constructeur
-            Carte_Magie(const std::string& nomCarte, Icone icone,
-                const std::string& descriptionCarte, const std::string& numeroCarte);
+                std::string a_nomCarte;
+                Icone a_icone;
+                std::string a_description;
+                std::string a_numeroCarte;
 
-            // destructeur
-            ~Carte_Magie();
+            };
 
-            // getter - Type
-            std::string getType() const;
+            class Carte_Magie : public Carte_MagiePiege
+            {
+            public:
 
-        };
+                // constructeur
+                Carte_Magie(const std::string& nomCarte, Icone icone,
+                    const std::string& description, const std::string& numeroCarte);
 
-        class Carte_Piege : public Carte_MagiePiege
-        {
-        public:
+                // destructeur
+                ~Carte_Magie();
 
-            // constructeur
-            Carte_Piege(const std::string& nomCarte, Icone icone,
-                const std::string& descriptionCarte, const std::string& numeroCarte);
+                // getter - Type
+                std::string getType() const;
 
-            // destructeur
-            ~Carte_Piege();
+            };
 
-            // getter - Type
-            std::string getType() const;
+            class Carte_Piege : public Carte_MagiePiege
+            {
+            public:
 
-        };
-    }
+                // constructeur
+                Carte_Piege(const std::string& nomCarte, Icone icone,
+                    const std::string& description, const std::string& numeroCarte);
 
+                // destructeur
+                ~Carte_Piege();
+
+                // getter - Type
+                std::string getType() const;
+
+            };
+        }
+
+    //}
     class TP {
     public:
         
@@ -259,6 +272,7 @@ namespace Partie3 {
         static void JeuDeCarte2();
         static void CarteMonstreYUGIOH();
         static void CarteMagiePiegeYUGIOH();
+        //static void Carte_YUGIOH();
     };
 }
 #endif // PARTIE3_H

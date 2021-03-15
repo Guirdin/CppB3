@@ -30,6 +30,9 @@ auto main()-> int
 	cout << "\nPour le TP 3.3 - Jeu de carte Monstre YUGIOH tapez (16)";
 	cout << "\nPour le TP 3.4 - Jeu de carte Magie/Piege YUGIOH tapez (17)\n";
 
+	// Non fonctionel
+	//cout << "\nPour le TP 3.5 - Jeu de carte YUGIOH tapez (18)\n";
+	
 	cout << "\nPour Quitter tapez (0)\n";
 
 	cout << "\nVeuillez choisir un TP: ";
@@ -74,6 +77,9 @@ auto main()-> int
 		case 16: restart("CarteMonstreYUGIOH"); break; // TP 3.3
 
 		case 17: restart("CarteMagiePiegeYUGIOH"); break; // TP 3.4
+
+		//case 18: restart("Carte_YUGIOH"); break; // TP 3.5
+
 
 	}
 	return 0;
